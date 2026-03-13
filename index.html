@@ -1,0 +1,902 @@
+<!DOCTYPE HTML>
+<!--
+  Hyperspace by HTML5 UP – html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Treść dostosowana do gabinetu weterynaryjnego GabiVet
+-->
+<html lang="pl">
+<head>
+  <title>GabiVet – Gabinet Weterynaryjny Sośnicowice</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <!-- Original Hyperspace stylesheet from HTML5UP demo server -->
+  <link rel="stylesheet" href="https://html5up.net/uploads/demos/hyperspace/assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="https://html5up.net/uploads/demos/hyperspace/assets/css/noscript.css" /></noscript>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /*
+     * ══════════════════════════════════════════════════════
+     *  PALETA: SURGICAL SCRUBS GREEN
+     *  Główny akcent : #6aab84   (zielony kolor scrubsów)
+     *  Ciemny akcent : #4d8a65   (hover / mocniejszy)
+     *  Jasny akcent  : #9dd4b4   (subtelne tła / glowy)
+     *  Tło zielone   : rgba(106,171,132, …)
+     *  Tło strony    : #1a2420   (bardzo ciemny butelkowy)
+     *  Sidebar       : #162019
+     *  Sekcja alt    : #1f2d27
+     * ══════════════════════════════════════════════════════
+     */
+
+    /* ── HYPERSPACE NATIVE OVERRIDES ────────────────────── */
+
+    /* Ogólne tła sekcji – zastąp ciemny granat ciemną zielenią */
+    body                          { background-color: #1a2420 !important; }
+    #wrapper > .wrapper.style1    { background-color: #1a2420 !important; }
+    #wrapper > .wrapper.style2    { background-color: #1f2d27 !important; }
+    #wrapper > .wrapper.style3    { background-color: #162019 !important; }
+    #wrapper > .wrapper.style1.fullscreen { background-color: #1a2420 !important; }
+
+    /* Sidebar */
+    #sidebar                      { background: #162019 !important; }
+    #sidebar .inner               { border-right-color: rgba(106,171,132,.15) !important; }
+    #sidebar nav ul li a          { border-top-color: rgba(106,171,132,.1) !important; }
+    #sidebar nav ul li a:hover,
+    #sidebar nav ul li a.active   { color: #9dd4b4 !important; }
+
+    /* Linki */
+    a                             { color: #9dd4b4 !important; }
+    a:hover                       { color: #c8ebd8 !important; }
+
+    /* Przyciski – primary */
+    input[type="submit"].primary,
+    input[type="reset"].primary,
+    input[type="button"].primary,
+    button.primary,
+    .button.primary {
+      background-color: #6aab84 !important;
+      border-color: #6aab84 !important;
+      color: #0d1a13 !important;
+    }
+    input[type="submit"].primary:hover,
+    .button.primary:hover {
+      background-color: #4d8a65 !important;
+      border-color: #4d8a65 !important;
+    }
+
+    /* Przyciski – ghost/outline */
+    .button:not(.primary) {
+      border-color: rgba(106,171,132,.45) !important;
+      color: #9dd4b4 !important;
+    }
+    .button:not(.primary):hover {
+      background-color: rgba(106,171,132,.12) !important;
+      border-color: #6aab84 !important;
+      color: #c8ebd8 !important;
+    }
+
+    /* Ikony w sekcji .features (Usługi) */
+    .wrapper.style3 .features li > .icon {
+      color: #6aab84 !important;
+    }
+    .wrapper.style3 .features li > .icon::before {
+      background: rgba(106,171,132,.1) !important;
+      border-color: rgba(106,171,132,.25) !important;
+    }
+
+    /* Input focus */
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    textarea:focus {
+      border-color: #6aab84 !important;
+    }
+
+    /* Scrolly / anchor active */
+    .scrolly                      { border-bottom-color: #6aab84 !important; }
+
+    /* ── QUICK INFO ────────────────────────────────────── */
+    .quick-info {
+      display: flex;
+      gap: 2em;
+      margin-top: 1.4em;
+      padding-top: 1.4em;
+      border-top: 1px solid rgba(106,171,132,.2);
+      flex-wrap: wrap;
+    }
+    .quick-info-item {
+      display: flex; align-items: center; gap: .55em;
+      font-size: .82em; color: rgba(255,255,255,.6);
+    }
+    .quick-info-item i        { color: #9dd4b4; }
+    .quick-info-item strong   { color: rgba(255,255,255,.85); }
+
+    /* ── REVIEWS ───────────────────────────────────────── */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1.5em;
+      margin-top: 1.5em;
+    }
+    .review-card {
+      background: rgba(106,171,132,.06);
+      border: 1px solid rgba(106,171,132,.18);
+      border-radius: 8px;
+      padding: 1.5em;
+    }
+    .review-stars { color: #d4a832; margin-bottom: .6em; font-size: .95em; }
+    .review-text  { font-size: .88em; font-style: italic; color: rgba(255,255,255,.6); margin-bottom: 1em; }
+    .review-author { display: flex; align-items: center; gap: .7em; }
+    .review-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(106,171,132,.2);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: .8em; color: #9dd4b4;
+      flex-shrink: 0;
+    }
+    .review-name { font-size: .82em; font-weight: 700; color: #fff; }
+    .review-pet  { font-size: .72em; color: rgba(255,255,255,.45); }
+
+    /* ── PRICING TABLE ─────────────────────────────────── */
+    .price-table-wrap {
+      overflow-x: auto;
+      border-radius: 8px;
+      border: 1px solid rgba(106,171,132,.2);
+      margin: 1.5em 0;
+    }
+    .price-table {
+      width: 100%; border-collapse: collapse;
+      font-size: .88em;
+    }
+    .price-table thead {
+      background: rgba(106,171,132,.14);
+    }
+    .price-table thead th {
+      padding: .85em 1.1em;
+      text-align: left;
+      font-size: .72em;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #9dd4b4;
+      font-weight: 700;
+    }
+    .price-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      transition: background .15s;
+    }
+    .price-table tbody tr:last-child { border-bottom: none; }
+    .price-table tbody tr:hover { background: rgba(106,171,132,.05); }
+    .price-table td { padding: .8em 1.1em; color: rgba(255,255,255,.7); }
+    .price-table .cat-row td {
+      font-size: .72em; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: #9dd4b4; padding: .55em 1.1em;
+      background: rgba(106,171,132,.1);
+    }
+    .price-table .price-val {
+      font-weight: 700; color: #fff;
+      text-align: right; white-space: nowrap;
+    }
+    .price-table .price-note-cell {
+      font-size: .8em; color: rgba(255,255,255,.45);
+    }
+
+    .price-legal {
+      background: rgba(200,140,30,.07);
+      border: 1px solid rgba(200,140,30,.2);
+      border-left: 4px solid #c8893a;
+      border-radius: 6px;
+      padding: 1em 1.3em;
+      font-size: .82em;
+      color: rgba(255,255,255,.6);
+      line-height: 1.7;
+    }
+    .price-legal strong { color: #d4a832; }
+
+    /* ── PATIENT CARDS ─────────────────────────────────── */
+    .patient-cards {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1.5em;
+      margin-top: 1.5em;
+    }
+    .patient-card {
+      background: rgba(106,171,132,.06);
+      border: 1px solid rgba(106,171,132,.18);
+      border-radius: 8px;
+      padding: 1.6em;
+    }
+    .patient-card .pc-icon {
+      font-size: 2em; color: #9dd4b4;
+      margin-bottom: .65em;
+      display: block;
+    }
+    .patient-card h3 {
+      font-size: 1em !important;
+      border-bottom: 1px solid rgba(106,171,132,.2);
+      padding-bottom: .6em; margin-bottom: .8em;
+    }
+    .patient-card ul {
+      list-style: none;
+      padding: 0; margin: 0;
+    }
+    .patient-card ul li {
+      font-size: .82em;
+      color: rgba(255,255,255,.6);
+      padding: .35em 0;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      display: flex; gap: .55em; align-items: flex-start;
+      line-height: 1.5;
+    }
+    .patient-card ul li:last-child { border-bottom: none; }
+    .patient-card ul li::before {
+      content: '✓';
+      color: #6aab84; font-weight: 700;
+      flex-shrink: 0; margin-top: .05em;
+    }
+
+    /* ── HOURS TABLE ───────────────────────────────────── */
+    .hours-wrap { margin-bottom: 1.5em; }
+    .hours-table { width: 100%; border-collapse: collapse; font-size: .88em; }
+    .hours-table tr { border-bottom: 1px solid rgba(255,255,255,.08); }
+    .hours-table tr:last-child { border-bottom: none; }
+    .hours-table td { padding: .5em .25em; color: rgba(255,255,255,.65); }
+    .hours-table .h-time { text-align: right; font-weight: 700; color: #fff; }
+    .hours-table .today-row td  { color: #9dd4b4; }
+    .hours-table .today-row .h-time { color: #9dd4b4; }
+    .hours-table .closed-row .h-time { color: rgba(255,255,255,.3); font-weight: 400; }
+
+    /* ── MAP EMBED ─────────────────────────────────────── */
+    .map-embed {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(106,171,132,.2);
+      margin-top: 1.5em;
+    }
+    .map-embed iframe { width: 100%; height: 280px; border: none; display: block; }
+    .map-embed-footer {
+      background: rgba(106,171,132,.06);
+      padding: .85em 1.1em;
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid rgba(106,171,132,.15);
+      gap: 1em; flex-wrap: wrap;
+    }
+    .map-embed-footer p { margin: 0; font-size: .8em; color: rgba(255,255,255,.5); }
+    .map-embed-footer a.btn-map {
+      background: #6aab84 !important;
+      color: #0d1a13 !important;
+      padding: .4em 1em;
+      border-radius: 4px;
+      font-size: .8em; font-weight: 700;
+      text-decoration: none !important;
+      white-space: nowrap;
+    }
+    .map-embed-footer a.btn-map:hover { background: #4d8a65 !important; }
+
+    /* ── PARKING BOX ───────────────────────────────────── */
+    .parking-box {
+      background: rgba(106,171,132,.08);
+      border: 1px solid rgba(106,171,132,.22);
+      border-radius: 6px;
+      padding: .9em 1.2em;
+      display: flex; gap: .8em; align-items: flex-start;
+      margin-top: 1em; font-size: .85em;
+    }
+    .parking-box i { color: #9dd4b4; margin-top: .2em; flex-shrink: 0; }
+    .parking-box p { margin: 0; color: rgba(255,255,255,.6); line-height: 1.6; }
+    .parking-box strong { color: #9dd4b4; display: block; margin-bottom: .2em; }
+
+    /* ── GALLERY ───────────────────────────────────────── */
+    .gallery-mini {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: .75em;
+      margin-top: 1.5em;
+    }
+    .gallery-mini a {
+      display: block;
+      border-radius: 6px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      border: 1px solid rgba(106,171,132,.18);
+    }
+    .gallery-mini a:first-child { grid-column: span 2; aspect-ratio: 2/1; }
+    .gallery-mini img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform .4s, filter .4s;
+      filter: brightness(.85) saturate(.9);
+    }
+    .gallery-mini a:hover img { transform: scale(1.05); filter: brightness(1) saturate(1.1); }
+
+    /* ── SPOTLIGHTS TWEAK ──────────────────────────────── */
+    #about.wrapper.style2.spotlights section .image {
+      background-position: center top !important;
+    }
+
+    /* Spec label colour inside spotlight */
+    #about p[style*="color:#9dd4b4"] { color: #9dd4b4 !important; }
+
+    /* ── FORM SELECT ───────────────────────────────────── */
+    .field select {
+      width: 100%;
+      background: rgba(106,171,132,.05);
+      border: solid 1px rgba(106,171,132,.25);
+      color: rgba(255,255,255,.65);
+      border-radius: 4px;
+      padding: 0 1em;
+      height: 2.75em;
+      font-size: 1em;
+      font-family: inherit;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .field select:focus { border-color: #6aab84; }
+    .field select option { background: #1a2b22; }
+
+    .form-success {
+      display: none;
+      background: rgba(106,171,132,.12);
+      border: 1px solid rgba(106,171,132,.35);
+      border-radius: 4px;
+      padding: .75em 1em;
+      margin-top: .75em;
+      color: #9dd4b4;
+      font-size: .88em;
+      text-align: center;
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────────── */
+    @media screen and (max-width: 980px) {
+      .reviews-grid    { grid-template-columns: 1fr; }
+      .patient-cards   { grid-template-columns: 1fr; }
+      .gallery-mini    { grid-template-columns: repeat(2,1fr); }
+      .gallery-mini a:first-child { grid-column: span 1; aspect-ratio: 1; }
+    }
+    @media screen and (max-width: 736px) {
+      .quick-info      { gap: 1em; }
+      .price-table     { font-size: .78em; }
+      .gallery-mini    { grid-template-columns: repeat(2,1fr); }
+    }
+  </style>
+</head>
+<body class="is-preload">
+
+<!-- ═══════════════ SIDEBAR ═══════════════ -->
+<section id="sidebar">
+  <div class="inner">
+    <nav>
+      <ul>
+        <li><a href="#intro">Strona główna</a></li>
+        <li><a href="#about">O gabinecie</a></li>
+        <li><a href="#services">Usługi</a></li>
+        <li><a href="#pricing">Cennik</a></li>
+        <li><a href="#patient">Strefa pacjenta</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<!-- ═══════════════ WRAPPER ═══════════════ -->
+<div id="wrapper">
+
+  <!-- ══════ 1. STRONA GŁÓWNA ══════ -->
+  <section id="intro" class="wrapper style1 fullscreen fade-up">
+    <div class="inner">
+
+      <h1>GabiVet<br>Gabinet Weterynaryjny</h1>
+      <p>Kompleksowa opieka dla psów, kotów, koni i zwierząt egzotycznych w Sośnicowicach.<br>
+      Lekarz Weterynarii Gabriela Rusak · nowoczesny sprzęt · indywidualne podejście do każdego pacjenta.</p>
+
+      <ul class="actions">
+        <li><a href="#contact" class="button scrolly primary">Umów wizytę</a></li>
+        <li><a href="#services" class="button scrolly">Usługi</a></li>
+      </ul>
+
+      <!-- Quick contact strip -->
+      <div class="quick-info">
+        <div class="quick-info-item">
+          <i class="fas fa-phone"></i>
+          <span><strong>510 110 169</strong></span>
+        </div>
+        <div class="quick-info-item">
+          <i class="fas fa-clock"></i>
+          <span>Pn–Pt <strong>8:00–20:00</strong> &bull; Sob <strong>9:00–14:00</strong></span>
+        </div>
+        <div class="quick-info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>ul. Kościuszki 22/2, <strong>Sośnicowice</strong></span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════ 2. O NAS / ZESPÓŁ ══════ -->
+  <section id="about" class="wrapper style2 spotlights">
+
+    <!-- Historia gabinetu -->
+    <section>
+      <a href="#" class="image">
+        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600&auto=format&fit=crop&q=80"
+             alt="Gabinet weterynaryjny" data-position="center center" />
+      </a>
+      <div class="content">
+        <div class="inner">
+          <h2>Gabinet z osobistym podejściem</h2>
+          <p>GabiVet to jednoosobowy gabinet weterynaryjny prowadzony przez lekarza weterynarii Gabrielę Rusak. Oznacza to, że za każdym razem Twoje zwierzę trafia pod opiekę tej samej lekarki — bez losowania, bez przekazywania historii choroby nowemu personelowi. Dysponuję aparatem USG, cyfrowym RTG, analizatorem krwi oraz w pełni wyposażoną salą operacyjną.</p>
+          <p>Stale poszerzam wiedzę uczestnicząc w konferencjach i kursach specjalistycznych. Diagnozę zawsze wyjaśniam w zrozumiały sposób — bez zbędnego żargonu. Znam swoich pacjentów z imienia i pamiętam ich historię.</p>
+          <ul class="actions">
+            <li><a href="#contact" class="button">Umów wizytę</a></li>
+          </ul>
+          <!-- Gallery -->
+          <div class="gallery-mini" style="margin-top:1.8em">
+            <a href="#">
+              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&auto=format&fit=crop&q=80" alt="Sala zabiegowa" />
+            </a>
+            <a href="#">
+              <img src="https://images.unsplash.com/photo-1666214277666-e9851f9c16cd?w=300&auto=format&fit=crop&q=80" alt="Gabinet przyjęć" />
+            </a>
+            <a href="#">
+              <img src="https://images.unsplash.com/photo-1601758174493-45d0a4d3e407?w=300&auto=format&fit=crop&q=80" alt="Poczekalnia" />
+            </a>
+            <a href="#">
+              <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&auto=format&fit=crop&q=80" alt="Laboratorium" />
+            </a>
+            <a href="#">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=300&auto=format&fit=crop&q=80" alt="Sprzęt USG" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dr Gabriela Rusak -->
+    <section>
+      <a href="#" class="image">
+        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&auto=format&fit=crop&q=80"
+             alt="Lekarz weterynarii Gabriela Rusak" data-position="center top" />
+      </a>
+      <div class="content">
+        <div class="inner">
+          <h2>Lekarz Weterynarii Gabriela Rusak</h2>
+          <p style="color:#9dd4b4;font-size:.82em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5em">Lekarz weterynarii · właścicielka gabinetu</p>
+          <p>Absolwentka Wydziału Medycyny Weterynaryjnej. Prowadzi GabiVet samodzielnie — co oznacza, że każda wizyta, każdy zabieg i każda decyzja terapeutyczna przechodzi przez jedną parę rąk i jeden umysł doskonale znający historię Twojego zwierzęcia.</p>
+          <p>W jednoosobowym gabinecie nie ma anonimowości — dr Rusak pamięta imiona swoich pacjentów, ich charakter i wcześniejsze dolegliwości. Regularnie uczestniczy w kursach i konferencjach specjalistycznych, by łączyć osobiste zaangażowanie z aktualną wiedzą medyczną.</p>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- ══════ 3. USŁUGI ══════ -->
+  <section id="services" class="wrapper style3 fade-up">
+    <div class="inner">
+      <h2>Zakres usług weterynaryjnych</h2>
+      <p>Oferujemy kompleksową opiekę — od rutynowych wizyt kontrolnych po skomplikowane zabiegi chirurgiczne. Wszystko, czego potrzebuje Twój zwierzak, w jednym miejscu.</p>
+      <div class="features">
+
+        <section>
+          <span class="icon solid major fa-syringe"></span>
+          <h3>Profilaktyka</h3>
+          <p>Szczepienia ochronne (wścieklizna, DHPPiL, FeLV i inne), odrobaczanie, czipowanie z rejestracją w bazie Safe-Animal, wystawianie paszportów UE, regularne przeglądy zdrowotne.</p>
+        </section>
+
+        <section>
+          <span class="icon solid major fa-microscope"></span>
+          <h3>Diagnostyka laboratoryjna</h3>
+          <p>Morfologia i biochemia krwi (wyniki w ~30 min), badanie ogólne moczu, badanie kału (parazytologia metodą flotacji), cytologia i biopsja cienkoigłowa zmian skórnych i guzów.</p>
+        </section>
+
+        <section>
+          <span class="icon solid major fa-x-ray"></span>
+          <h3>Diagnostyka obrazowa</h3>
+          <p>Ultrasonografia narządów jamy brzusznej, echo serca, USG ciąży. Cyfrowe RTG klatki piersiowej, układu kostnego i brzucha. Pełna interpretacja wyników na miejscu, archiwizacja cyfrowa.</p>
+        </section>
+
+        <section>
+          <span class="icon solid major fa-procedures"></span>
+          <h3>Chirurgia</h3>
+          <p>Sterylizacja i kastracja psów i kotów, usuwanie guzów sutka i zmian skórnych, chirurgia ortopedyczna (złamania, stawy), zabiegi gastroenterologiczne, cięcie cesarskie, gastropeksja.</p>
+        </section>
+
+        <section>
+          <span class="icon solid major fa-tooth"></span>
+          <h3>Stomatologia weterynaryjna</h3>
+          <p>Ultradźwiękowe usuwanie kamienia nazębnego (skaling) z polerowaniem zębów, ekstrakcje zębów nadmiarowych i uszkodzonych, leczenie zapalenia dziąseł i chorób przyzębia.</p>
+        </section>
+
+        <section>
+          <span class="icon solid major fa-allergies"></span>
+          <h3>Dermatologia i alergia</h3>
+          <p>Diagnostyka i leczenie atopowego zapalenia skóry, alergii pokarmowych, grzybic, otodekozy (świerzbu uszu), chorób łap i pazurów. Testy alergiczne i immunoterapia swoista.</p>
+        </section>
+
+        <section>
+          <span class="icon solid major fa-dove"></span>
+          <h3>Zwierzęta egzotyczne</h3>
+          <p>Opieka nad królikami, świnkami morskimi, fretkami, gadami (węże, agamy, żółwie), ptakami i płazami. Specjalistyczne porady żywieniowe i profilaktyczne dla każdego gatunku.</p>
+        </section>
+
+        <section>
+          <span class="icon solid major fa-house-medical"></span>
+          <h3>Wizyty domowe i dyżur 24h</h3>
+          <p>Wizyty domowe dla zwierząt, które nie powinny być transportowane (stres, stan zdrowia). Dyżur telefoniczny — dr Rusak jest osiągalna w nagłych sytuacjach poza godzinami przyjęć.</p>
+        </section>
+
+      </div>
+      <ul class="actions">
+        <li><a href="#pricing" class="button scrolly">Zobacz cennik</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════ 4. CENNIK ══════ -->
+  <section id="pricing" class="wrapper style1 fade-up">
+    <div class="inner">
+      <h2>Orientacyjny cennik</h2>
+      <p>Przejrzystość finansowa jest dla nas ważna. Poniżej znajdziesz orientacyjne ceny najczęściej wykonywanych usług. Przed każdym zabiegiem przedstawiamy szczegółowy kosztorys.</p>
+
+      <div class="price-table-wrap">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th style="width:45%">Usługa</th>
+              <th>Uwagi</th>
+              <th style="width:130px;text-align:right">Cena od</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="cat-row"><td colspan="3">Wizyty i konsultacje</td></tr>
+            <tr><td>Konsultacja ogólna</td><td class="price-note-cell">Badanie fizykalne + wywiad</td><td class="price-val">80 zł</td></tr>
+            <tr><td>Konsultacja specjalistyczna</td><td class="price-note-cell">Dermatolog, chirurg</td><td class="price-val">130 zł</td></tr>
+            <tr><td>Wizyta domowa</td><td class="price-note-cell">W promieniu 10 km</td><td class="price-val">200 zł</td></tr>
+
+            <tr class="cat-row"><td colspan="3">Profilaktyka</td></tr>
+            <tr><td>Szczepienie (wścieklizna)</td><td class="price-note-cell">Wpis do paszportu</td><td class="price-val">80 zł</td></tr>
+            <tr><td>Szczepienie kompleksowe pies</td><td class="price-note-cell">DHPPiL</td><td class="price-val">120 zł</td></tr>
+            <tr><td>Szczepienie kompleksowe kot</td><td class="price-note-cell">FPV+FHV+FCV</td><td class="price-val">100 zł</td></tr>
+            <tr><td>Czipowanie + rejestracja</td><td class="price-note-cell">Transponder ISO</td><td class="price-val">90 zł</td></tr>
+            <tr><td>Paszport UE</td><td class="price-note-cell">Psy, koty, fretki</td><td class="price-val">80 zł</td></tr>
+            <tr><td>Obcięcie pazurów</td><td class="price-note-cell">Pies lub kot</td><td class="price-val">40 zł</td></tr>
+
+            <tr class="cat-row"><td colspan="3">Diagnostyka</td></tr>
+            <tr><td>Morfologia krwi</td><td class="price-note-cell">Wynik w ~30 min</td><td class="price-val">80 zł</td></tr>
+            <tr><td>Biochemia krwi (profil)</td><td class="price-note-cell">8–12 parametrów</td><td class="price-val">120 zł</td></tr>
+            <tr><td>Badanie moczu</td><td class="price-note-cell">Z osadem</td><td class="price-val">60 zł</td></tr>
+            <tr><td>USG jamy brzusznej</td><td class="price-note-cell">Narządy miąższowe</td><td class="price-val">180 zł</td></tr>
+            <tr><td>RTG (1 projekcja)</td><td class="price-note-cell">Klatka, kości, brzuch</td><td class="price-val">120 zł</td></tr>
+
+            <tr class="cat-row"><td colspan="3">Chirurgia i zabiegi</td></tr>
+            <tr><td>Kastracja kota (samiec)</td><td class="price-note-cell">Znieczulenie</td><td class="price-val">250 zł</td></tr>
+            <tr><td>Sterylizacja kotki</td><td class="price-note-cell">Znieczulenie ogólne</td><td class="price-val">450 zł</td></tr>
+            <tr><td>Kastracja psa</td><td class="price-note-cell">Zależy od wagi</td><td class="price-val">400 zł</td></tr>
+            <tr><td>Sterylizacja suki</td><td class="price-note-cell">Zależy od wagi</td><td class="price-val">600 zł</td></tr>
+            <tr><td>Skaling + polerowanie</td><td class="price-note-cell">Znieczulenie ogólne</td><td class="price-val">350 zł</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="price-legal">
+        <strong>⚠️ Uwaga:</strong> Niniejszy cennik ma wyłącznie charakter orientacyjny i nie stanowi oferty handlowej w rozumieniu art. 66 Kodeksu cywilnego. Ostateczny koszt wizyty lub zabiegu zależy od stanu zdrowia pacjenta, ilości zużytych leków i materiałów oraz rzeczywistego czasu trwania procedury. Szczegółowy kosztorys przedstawiamy przed każdym planowym zabiegiem.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════ 5. STREFA PACJENTA ══════ -->
+  <section id="patient" class="wrapper style2 fade-up">
+    <div class="inner">
+      <h2>Strefa pacjenta — poradnik</h2>
+      <p>Kilka praktycznych wskazówek, które pomogą Tobie i Twojemu zwierzęciu dobrze przygotować się do wizyty lub zabiegu — i zaoszczędzą czas na recepcji.</p>
+
+      <div class="patient-cards">
+
+        <div class="patient-card">
+          <i class="fas fa-paw pc-icon"></i>
+          <h3>Pierwsza wizyta</h3>
+          <ul>
+            <li>Zabierz książeczkę zdrowia lub paszport europejski</li>
+            <li>Weź poprzednie wyniki badań i karty z innych gabinetów</li>
+            <li>Zanotuj datę ostatniego szczepienia i odrobaczania</li>
+            <li>Przygotuj listę objawów i od kiedy je obserwujesz</li>
+            <li>Zapisz stosowane aktualnie leki i dawkowanie</li>
+            <li>Kota lub małe zwierzę przywieź w transporterze</li>
+          </ul>
+        </div>
+
+        <div class="patient-card">
+          <i class="fas fa-hospital pc-icon"></i>
+          <h3>Przygotowanie do zabiegu / znieczulenia</h3>
+          <ul>
+            <li>Zachowaj 12-godzinną głodówkę przed znieczuleniem ogólnym</li>
+            <li>Wodę można podawać do 2–4 godzin przed zabiegiem</li>
+            <li>Nie dawaj leków w dniu zabiegu bez konsultacji</li>
+            <li>Poinformuj o chorobach serca, nerek lub wątroby</li>
+            <li>Zaplanuj transport — po znieczuleniu zwierzę nie wraca samo</li>
+            <li>Przygotuj ciche, ciepłe miejsce do odpoczynku w domu</li>
+          </ul>
+        </div>
+
+        <div class="patient-card">
+          <i class="fas fa-flask pc-icon"></i>
+          <h3>Jak zebrać próbki do badań</h3>
+          <ul>
+            <li><strong>Mocz:</strong> poranna próbka ~5–10 ml do czystego pojemnika</li>
+            <li>Dostarcz mocz w ciągu 2 godzin od pobrania</li>
+            <li><strong>Kał:</strong> ok. 1 łyżeczka do szczelnego pojemnika</li>
+            <li>Próbka kału powinna być świeża — z dnia badania</li>
+            <li>Oznacz pojemnik imieniem zwierzęcia i datą pobrania</li>
+            <li>Pojemniki odbierz bezpłatnie w recepcji gabinetu</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ OPINIE KLIENTÓW ══════ -->
+  <section id="reviews" class="wrapper style3 fade-up">
+    <div class="inner">
+      <h2>Opinie klientów</h2>
+      <p>Co mówią właściciele zwierząt o naszym gabinecie.</p>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Niesamowity gabinet! Pani doktor zajęła się naszym kotem z ogromną troską i cierpliwością. Diagnoza błyskawiczna, ceny uczciwe. Polecamy z całego serca!"</p>
+          <div class="review-author">
+            <div class="review-avatar">MK</div>
+            <div>
+              <div class="review-name">Marta Kamińska</div>
+              <div class="review-pet">🐱 właścicielka kota · Google Maps</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Gdy mój labrador zachorował wieczorem, zadzwoniłem po godzinach. Pani doktor odebrała od razu i pomogła podjąć właściwą decyzję. Rano przyjęła nas bez zbędnych formalności."</p>
+          <div class="review-author">
+            <div class="review-avatar">TP</div>
+            <div>
+              <div class="review-name">Tomasz Pawlak</div>
+              <div class="review-pet">🐶 właściciel labradora · Google Maps</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Przyszłam ze świnką morską — tutaj podeszli z prawdziwą wiedzą i entuzjazmem. Widać, że naprawdę kochają zwierzęta. Polecam każdemu!"</p>
+          <div class="review-author">
+            <div class="review-avatar">AN</div>
+            <div>
+              <div class="review-name">Agnieszka Nowak</div>
+              <div class="review-pet">🐹 właścicielka świnki · Google Maps</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ 6. KONTAKT ══════ -->
+  <section id="contact" class="wrapper style1 fade-up">
+    <div class="inner">
+      <h2>Kontakt i dojazd</h2>
+      <div class="split style1">
+
+        <!-- Formularz -->
+        <section>
+          <h3 style="font-size:1.05em;margin-bottom:1em;color:#fff">Formularz zgłoszeniowy</h3>
+          <form method="post" action="#" onsubmit="return handleForm(event)">
+            <div class="fields">
+              <div class="field half">
+                <label for="name">Imię i nazwisko</label>
+                <input type="text" name="name" id="name" placeholder="Jan Kowalski" />
+              </div>
+              <div class="field half">
+                <label for="tel">Telefon</label>
+                <input type="tel" name="tel" id="tel" placeholder="+48 600 000 000" />
+              </div>
+              <div class="field half">
+                <label for="animal">Zwierzę</label>
+                <select name="animal" id="animal">
+                  <option value="">— wybierz —</option>
+                  <option>Pies</option>
+                  <option>Kot</option>
+                  <option>Królik</option>
+                  <option>Ptak</option>
+                  <option>Gad / płaz</option>
+                  <option>Inne</option>
+                </select>
+              </div>
+              <div class="field half">
+                <label for="service">Cel wizyty</label>
+                <select name="service" id="service">
+                  <option value="">— wybierz —</option>
+                  <option>Konsultacja ogólna</option>
+                  <option>Szczepienie / profilaktyka</option>
+                  <option>Diagnostyka (USG/RTG/krew)</option>
+                  <option>Chirurgia / zabieg</option>
+                  <option>Stomatologia</option>
+                  <option>Nagły przypadek</option>
+                  <option>Inne</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">Opis (opcjonalnie)</label>
+                <textarea name="message" id="message" rows="4" placeholder="Opisz krótko problem lub pytanie…"></textarea>
+              </div>
+            </div>
+            <ul class="actions">
+              <li><input type="submit" value="Wyślij zgłoszenie" class="primary" /></li>
+            </ul>
+            <div class="form-success" id="form-success">
+              ✓ Dziękujemy! Odezwiemy się wkrótce.
+            </div>
+          </form>
+        </section>
+
+        <!-- Dane kontaktowe -->
+        <section>
+          <ul class="contact">
+            <li>
+              <h3>Adres</h3>
+              <span>ul. Kościuszki 22/2<br />44-153 Sośnicowice</span>
+            </li>
+            <li>
+              <h3>Telefon</h3>
+              <a href="tel:+48321234567">510 110 169</a>
+            </li>
+            <li>
+              <h3>Telefon po godzinach</h3>
+              <a href="tel:+48600000000">510 110 169</a>
+            </li>
+            <li>
+              <h3>E-mail</h3>
+              <a href="mailto:kontakt@gabivet.pl">kontakt@gabivet.pl</a>
+            </li>
+            <li>
+              <h3>Godziny otwarcia</h3>
+              <div class="hours-wrap">
+                <table class="hours-table">
+                  <tr><td>Poniedziałek</td><td class="h-time">8:00 – 20:00</td></tr>
+                  <tr><td>Wtorek</td><td class="h-time">8:00 – 20:00</td></tr>
+                  <tr><td>Środa</td><td class="h-time">8:00 – 20:00</td></tr>
+                  <tr><td>Czwartek</td><td class="h-time">8:00 – 20:00</td></tr>
+                  <tr><td>Piątek</td><td class="h-time">8:00 – 20:00</td></tr>
+                  <tr><td>Sobota</td><td class="h-time">9:00 – 14:00</td></tr>
+                  <tr class="closed-row"><td>Niedziela</td><td class="h-time">zamknięte</td></tr>
+                </table>
+              </div>
+            </li>
+            <li>
+              <h3>Dojazd i parking</h3>
+              <div class="parking-box">
+                <i class="fas fa-parking"></i>
+                <p><strong>Parking bezpłatny</strong>
+                Bezpłatny parking dla klientów tuż przy wejściu.</p>
+              </div>
+            </li>
+            <li>
+              <h3>Social media</h3>
+              <ul class="icons">
+                <li><a href="https://www.facebook.com/profile.php?id=100063530081938" target="_blank" rel="noopener" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Google Maps -->
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80000!2d19.0238!3d50.2649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716cf3b26ea9b25%3A0x59b5bd9e49ea7de5!2sKatowice!5e0!3m2!1spl!2spl!4v1700000000"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa dojazdu GabiVet Sośnicowice">
+            </iframe>
+            <div class="map-embed-footer">
+              <p><strong>GabiVet</strong> — ul. Kościuszki 22/2, Sośnicowice</p>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Sośnicowice+Kościuszki+22"
+                 target="_blank" rel="noopener" class="btn-map">
+                <i class="fas fa-route"></i> Wyznacz trasę
+              </a>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /#wrapper -->
+
+<!-- Footer -->
+<footer id="footer" class="wrapper alt">
+  <div class="inner">
+    <ul class="menu">
+      <li>&copy; 2025 GabiVet Gabinet Weterynaryjny. Wszelkie prawa zastrzeżone.</li>
+      <li>Szablon: <a href="https://html5up.net" target="_blank" rel="noopener">Hyperspace by HTML5 UP</a> (CCA 3.0)</li>
+    </ul>
+  </div>
+</footer>
+
+  <!-- ZNAK WODNY "STRONA W BUDOWIE" -->
+  <style>
+    .wip-watermark {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 99999;
+      overflow: hidden;
+    }
+    .wip-watermark::before {
+      content: 'STRONA W BUDOWIE · STRONA W BUDOWIE · STRONA W BUDOWIE · STRONA W BUDOWIE · STRONA W BUDOWIE';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-35deg);
+      white-space: nowrap;
+      font-family: Arial, sans-serif;
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 900;
+      letter-spacing: .25em;
+      color: rgba(255, 255, 255, 0.13);
+      text-shadow: 0 1px 2px rgba(0,0,0,.18);
+      width: 200vw;
+      text-align: center;
+      line-height: 1;
+    }
+    .wip-watermark::after {
+      content: 'STRONA W BUDOWIE · STRONA W BUDOWIE · STRONA W BUDOWIE · STRONA W BUDOWIE · STRONA W BUDOWIE';
+      position: absolute;
+      top: calc(50% + clamp(40px, 8vw, 80px));
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-35deg);
+      white-space: nowrap;
+      font-family: Arial, sans-serif;
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 900;
+      letter-spacing: .25em;
+      color: rgba(255, 255, 255, 0.08);
+      text-shadow: 0 1px 2px rgba(0,0,0,.18);
+      width: 200vw;
+      text-align: center;
+      line-height: 1;
+    }
+  </style>
+  <div class="wip-watermark" aria-hidden="true"></div>
+<script src="https://html5up.net/uploads/demos/hyperspace/assets/js/jquery.min.js"></script>
+<script src="https://html5up.net/uploads/demos/hyperspace/assets/js/jquery.scrollex.min.js"></script>
+<script src="https://html5up.net/uploads/demos/hyperspace/assets/js/jquery.scrolly.min.js"></script>
+<script src="https://html5up.net/uploads/demos/hyperspace/assets/js/browser.min.js"></script>
+<script src="https://html5up.net/uploads/demos/hyperspace/assets/js/breakpoints.min.js"></script>
+<script src="https://html5up.net/uploads/demos/hyperspace/assets/js/util.js"></script>
+<script src="https://html5up.net/uploads/demos/hyperspace/assets/js/main.js"></script>
+
+<script>
+  // Form handler
+  function handleForm(e) {
+    e.preventDefault();
+    var ok = document.getElementById('form-success');
+    ok.style.display = 'block';
+    e.target.reset();
+    setTimeout(function() { ok.style.display = 'none'; }, 6000);
+    return false;
+  }
+
+  // Highlight today's row in hours table
+  var days = ['Niedziela','Poniedziałek','Wtorek','Środa','Czwartek','Piątek','Sobota'];
+  var today = days[new Date().getDay()];
+  document.querySelectorAll('.hours-table td:first-child').forEach(function(td) {
+    if (td.textContent.trim() === today) {
+      td.closest('tr').classList.add('today-row');
+    }
+  });
+</script>
+
+</body>
+</html>
