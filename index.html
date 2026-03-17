@@ -20,71 +20,71 @@
   <style>
     /*
      * ══════════════════════════════════════════════════════
-     *  PALETA: SURGICAL SCRUBS GREEN
-     *  Główny akcent : #6aab84   (zielony kolor scrubsów)
-     *  Ciemny akcent : #4d8a65   (hover / mocniejszy)
-     *  Jasny akcent  : #9dd4b4   (subtelne tła / glowy)
-     *  Tło zielone   : rgba(106,171,132, …)
-     *  Tło strony    : #1a2420   (bardzo ciemny butelkowy)
-     *  Sidebar       : #162019
-     *  Sekcja alt    : #1f2d27
+     * PALETA ZAKTUALIZOWANA: LOGO GABIVET
+     * Główny akcent : #1ea34c   (żywa zieleń zgodna z logo)
+     * Ciemny akcent : #15803d   (hover / mocniejszy)
+     * Jasny akcent  : #86efac   (subtelne tła / glowy)
+     * Tło zielone   : rgba(30,163,76, …)
+     * Tło strony    : #273b30   (rozjaśniona, leśna zieleń)
+     * Sidebar       : #203328   (nieco ciemniejsza dla kontrastu)
+     * Sekcja alt    : #2e4538   (jaśniejsza dla przełamania)
      * ══════════════════════════════════════════════════════
      */
 
-    /* ── HYPERSPACE NATIVE OVERRIDES ────────────────────── */
+    /* ── HYPERSPACE NATIVE OVERRIDES ───────────────────── */
 
-    /* Ogólne tła sekcji – zastąp ciemny granat ciemną zielenią */
-    body                          { background-color: #1a2420 !important; }
-    #wrapper > .wrapper.style1    { background-color: #1a2420 !important; }
-    #wrapper > .wrapper.style2    { background-color: #1f2d27 !important; }
-    #wrapper > .wrapper.style3    { background-color: #162019 !important; }
-    #wrapper > .wrapper.style1.fullscreen { background-color: #1a2420 !important; }
+    /* Ogólne tła sekcji – jaśniejsze i cieplejsze zielenie */
+    body                          { background-color: #273b30 !important; }
+    #wrapper > .wrapper.style1    { background-color: #273b30 !important; }
+    #wrapper > .wrapper.style2    { background-color: #2e4538 !important; }
+    #wrapper > .wrapper.style3    { background-color: #203328 !important; }
+    #wrapper > .wrapper.style1.fullscreen { background-color: #273b30 !important; }
 
     /* Sidebar */
-    #sidebar                      { background: #162019 !important; }
-    #sidebar .inner               { border-right-color: rgba(106,171,132,.15) !important; }
-    #sidebar nav ul li a          { border-top-color: rgba(106,171,132,.1) !important; }
+    #sidebar                      { background: #203328 !important; }
+    #sidebar .inner               { border-right-color: rgba(30,163,76,.2) !important; }
+    #sidebar nav ul li a          { border-top-color: rgba(30,163,76,.1) !important; }
     #sidebar nav ul li a:hover,
-    #sidebar nav ul li a.active   { color: #9dd4b4 !important; }
+    #sidebar nav ul li a.active   { color: #86efac !important; }
 
     /* Linki */
-    a                             { color: #9dd4b4 !important; }
-    a:hover                       { color: #c8ebd8 !important; }
+    a                             { color: #86efac !important; }
+    a:hover                       { color: #bbf7d0 !important; }
 
-    /* Przyciski – primary */
+    /* Przyciski – primary (kolor logo) */
     input[type="submit"].primary,
     input[type="reset"].primary,
     input[type="button"].primary,
     button.primary,
     .button.primary {
-      background-color: #6aab84 !important;
-      border-color: #6aab84 !important;
-      color: #0d1a13 !important;
+      background-color: #1ea34c !important;
+      border-color: #1ea34c !important;
+      color: #ffffff !important;
     }
     input[type="submit"].primary:hover,
     .button.primary:hover {
-      background-color: #4d8a65 !important;
-      border-color: #4d8a65 !important;
+      background-color: #15803d !important;
+      border-color: #15803d !important;
     }
 
     /* Przyciski – ghost/outline */
     .button:not(.primary) {
-      border-color: rgba(106,171,132,.45) !important;
-      color: #9dd4b4 !important;
+      border-color: rgba(30,163,76,.5) !important;
+      color: #86efac !important;
     }
     .button:not(.primary):hover {
-      background-color: rgba(106,171,132,.12) !important;
-      border-color: #6aab84 !important;
-      color: #c8ebd8 !important;
+      background-color: rgba(30,163,76,.15) !important;
+      border-color: #1ea34c !important;
+      color: #ffffff !important;
     }
 
     /* Ikony w sekcji .features (Usługi) */
     .wrapper.style3 .features li > .icon {
-      color: #6aab84 !important;
+      color: #1ea34c !important;
     }
     .wrapper.style3 .features li > .icon::before {
-      background: rgba(106,171,132,.1) !important;
-      border-color: rgba(106,171,132,.25) !important;
+      background: rgba(30,163,76,.1) !important;
+      border-color: rgba(30,163,76,.3) !important;
     }
 
     /* Input focus */
@@ -92,11 +92,29 @@
     input[type="email"]:focus,
     input[type="tel"]:focus,
     textarea:focus {
-      border-color: #6aab84 !important;
+      border-color: #1ea34c !important;
     }
 
     /* Scrolly / anchor active */
-    .scrolly                      { border-bottom-color: #6aab84 !important; }
+    .scrolly                      { border-bottom-color: #1ea34c !important; }
+
+    /* Uaktualnienie rgba dla pozostałych elementów (np. ramki, tabele) */
+    .quick-info, .price-table-wrap, .map-embed, .parking-box, .patient-card, .review-card {
+      border-color: rgba(30,163,76,.25) !important;
+    }
+    .price-table thead, .price-table .cat-row td, .parking-box, .patient-card, .review-card, .map-embed-footer {
+      background: rgba(30,163,76,.08) !important;
+    }
+    .quick-info-item i, .patient-card .pc-icon, .parking-box i, .price-table thead th, .price-table .cat-row td {
+      color: #86efac !important;
+    }
+    .patient-card ul li::before {
+      color: #1ea34c !important;
+    }
+    .review-avatar {
+      background: rgba(30,163,76,.2);
+      color: #86efac;
+    }
 
     /* ── QUICK INFO ────────────────────────────────────── */
     .quick-info {
@@ -368,6 +386,10 @@
 <!-- ═══════════════ SIDEBAR ═══════════════ -->
 <section id="sidebar">
   <div class="inner">
+    <a href="#intro" class="logo scrolly" style="display: block; text-align: center; margin-bottom: 2em;">
+      <img src="logo1.png" alt="GabiVet Logo" style="max-width: 85%; height: auto; background: #fff; padding: 10px; border-radius: 6px;" />
+    </a>
+    
     <nav>
       <ul>
         <li><a href="#intro">Strona główna</a></li>
@@ -376,6 +398,7 @@
         <li><a href="#pricing">Cennik</a></li>
         <li><a href="#patient">Strefa pacjenta</a></li>
         <li><a href="#contact">Kontakt</a></li>
+        <li><a href="#stadnina">Stadnina koni</a></li>
       </ul>
     </nav>
   </div>
@@ -390,7 +413,7 @@
 
       <h1>GabiVet<br>Gabinet Weterynaryjny</h1>
       <p>Kompleksowa opieka dla psów, kotów, koni i zwierząt egzotycznych w Sośnicowicach.<br>
-      Lekarz Weterynarii Gabriela Rusak · nowoczesny sprzęt · indywidualne podejście do każdego pacjenta.</p>
+      Lekarz weterynarii Gabriela Rusak · nowoczesny sprzęt · indywidualne podejście do każdego pacjenta.</p>
 
       <ul class="actions">
         <li><a href="#contact" class="button scrolly primary">Umów wizytę</a></li>
@@ -458,7 +481,7 @@
     <!-- Dr Gabriela Rusak -->
     <section>
       <a href="#" class="image">
-        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&auto=format&fit=crop&q=80"
+        <img src="gabi.jpg"
              alt="Lekarz weterynarii Gabriela Rusak" data-position="center top" />
       </a>
       <div class="content">
@@ -812,6 +835,28 @@
     </div>
   </section>
 
+  <section id="stadnina" class="wrapper style2 spotlights fade-up">
+    <section>
+      <a href="#" class="image">
+        <img src="https://images.unsplash.com/photo-1553531384-cc64ac80f931?w=600&auto=format&fit=crop&q=80" 
+             alt="Stadnina koni GabiVet" data-position="center center" />
+      </a>
+      <div class="content">
+        <div class="inner">
+          <h2>Stadnina Koni</h2>
+          <p style="color:#86efac;font-size:.82em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5em">
+            Pasja, hodowla i sport
+          </p>
+          <p>Konie to nie tylko część naszej praktyki weterynaryjnej, ale przede wszystkim nasza największa pasja. Lek. wet. Gabriela Rusak jest dumną właścicielką przydomowej stadniny, w której dbamy o najwyższe standardy hodowli, dobrostan i rozwój naszych podopiecznych.</p>
+          <p>Nasze wieloletnie doświadczenie jeździeckie i hodowlane pozwala nam nie tylko lepiej rozumieć potrzeby pacjentów w terenie, ale też dzielić się tą pasją z innymi miłośnikami koni.</p>
+          <ul class="actions">
+            <li><a href="#contact" class="button scrolly">Skontaktuj się z nami</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </section>
+
 </div><!-- /#wrapper -->
 
 <!-- Footer -->
@@ -824,51 +869,6 @@
   </div>
 </footer>
 
-  <!-- ZNAK WODNY "STRONA W BUDOWIE" -->
-  <style>
-    .wip-watermark {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 99999;
-      overflow: hidden;
-    }
-    .wip-watermark::before {
-      content: 'STRONA W BUDOWIE · STRONA W BUDOWIE · STRONA W BUDOWIE · STRONA W BUDOWIE · STRONA W BUDOWIE';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-35deg);
-      white-space: nowrap;
-      font-family: Arial, sans-serif;
-      font-size: clamp(28px, 5vw, 52px);
-      font-weight: 900;
-      letter-spacing: .25em;
-      color: rgba(255, 255, 255, 0.13);
-      text-shadow: 0 1px 2px rgba(0,0,0,.18);
-      width: 200vw;
-      text-align: center;
-      line-height: 1;
-    }
-    .wip-watermark::after {
-      content: 'STRONA W BUDOWIE · STRONA W BUDOWIE · STRONA W BUDOWIE · STRONA W BUDOWIE · STRONA W BUDOWIE';
-      position: absolute;
-      top: calc(50% + clamp(40px, 8vw, 80px));
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-35deg);
-      white-space: nowrap;
-      font-family: Arial, sans-serif;
-      font-size: clamp(28px, 5vw, 52px);
-      font-weight: 900;
-      letter-spacing: .25em;
-      color: rgba(255, 255, 255, 0.08);
-      text-shadow: 0 1px 2px rgba(0,0,0,.18);
-      width: 200vw;
-      text-align: center;
-      line-height: 1;
-    }
-  </style>
-  <div class="wip-watermark" aria-hidden="true"></div>
 <script src="https://html5up.net/uploads/demos/hyperspace/assets/js/jquery.min.js"></script>
 <script src="https://html5up.net/uploads/demos/hyperspace/assets/js/jquery.scrollex.min.js"></script>
 <script src="https://html5up.net/uploads/demos/hyperspace/assets/js/jquery.scrolly.min.js"></script>
