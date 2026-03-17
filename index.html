@@ -379,6 +379,23 @@
       .price-table     { font-size: .78em; }
       .gallery-mini    { grid-template-columns: repeat(2,1fr); }
     }
+
+    /* ── LOGO MOBILNE ──────────────────────────────────── */
+    .mobile-logo {
+      display: none; /* Domyślnie ukryte na komputerze */
+    }
+    
+    @media screen and (max-width: 980px) {
+      .mobile-logo {
+        display: block; /* Pokazuj na ekranach mniejszych niż 980px */
+        max-width: 180px; /* Rozmiar idealny na telefon */
+        background: #fff;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 1.5em;
+      }
+    }
+    
   </style>
 </head>
 <body class="is-preload">
@@ -410,6 +427,8 @@
 <!-- ══════ 1. STRONA GŁÓWNA ═════ -->
 <section id="intro" class="wrapper style1 fullscreen fade-up">
     <div class="inner">
+
+      <img src="logo.png" alt="GabiVet Logo" class="mobile-logo" />
 
       <h1>GabiVet<br>Gabinet Weterynaryjny</h1>
       <p>Kompleksowa opieka weterynaryjna dla psów, kotów, koni i zwierząt egzotycznych w Sośnicowicach.<br>
