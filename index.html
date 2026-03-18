@@ -41,8 +41,20 @@
     #wrapper > .wrapper.style1.fullscreen { background-color: #273b30 !important; }
 
     /* Sidebar */
-    #sidebar                      { background: #203328 !important; }
-    #sidebar .inner               { border-right-color: rgba(30,163,76,.2) !important; }
+    #sidebar { 
+        background: #203328 !important; 
+        -ms-overflow-style: none;  /* Ukrywa pasek w IE i Edge */
+        scrollbar-width: none;     /* Ukrywa pasek w Firefox */
+    }
+
+    /* Ukrywa pasek przewijania w Chrome, Safari i Opera */
+    #sidebar::-webkit-scrollbar {
+        display: none;
+    }
+
+    #sidebar .inner { 
+        border-right: none !important; 
+    }
     #sidebar nav ul li a          { border-top-color: rgba(30,163,76,.1) !important; }
     #sidebar nav ul li a:hover,
     #sidebar nav ul li a.active   { color: #86efac !important; }
