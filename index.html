@@ -24,7 +24,7 @@
      * Główny akcent : #1ea34c   (żywa zieleń zgodna z logo)
      * Ciemny akcent : #15803d   (hover / mocniejszy)
      * Jasny akcent  : #86efac   (subtelne tła / glowy)
-     * Tło zielone   : rgba(30,163,76, …)
+     * Tło zielone   : rgba(30,163,76, ...)
      * Tło strony    : #273b30   (rozjaśniona, leśna zieleń)
      * Sidebar       : #203328   (nieco ciemniejsza dla kontrastu)
      * Sekcja alt    : #2e4538   (jaśniejsza dla przełamania)
@@ -79,11 +79,14 @@
     }
 
     /* Ikony w sekcji .features (Usługi) */
-    .wrapper.style3 .features li > .icon {
+    .wrapper.style3 .features section .icon {
       color: #1ea34c !important;
     }
-    .wrapper.style3 .features li > .icon::before {
+    .wrapper.style3 .features section .icon::before {
       background: rgba(30,163,76,.1) !important;
+      border-color: rgba(30,163,76,.3) !important;
+    }
+    .wrapper.style3 .features section .icon::after {
       border-color: rgba(30,163,76,.3) !important;
     }
 
@@ -336,7 +339,7 @@
     }
 
     /* Spec label colour inside spotlight */
-    #about p[style*="color:#9dd4b4"] { color: #9dd4b4 !important; }
+    #about p[style*="color:#6EE7B7"] { color: #9dd4b4 !important; }
 
     /* ── FORM SELECT ───────────────────────────────────── */
     .field select {
@@ -767,11 +770,11 @@
               <h3>Godziny otwarcia</h3>
               <div class="hours-wrap">
                 <table class="hours-table">
-                  <tr><td>Poniedziałek</td><td class="h-time">8:00 – 14:00</td></tr>
-                  <tr><td>Wtorek</td><td class="h-time">12:00 – 16:00</td></tr>
-                  <tr><td>Środa</td><td class="h-time">8:00 – 14:00</td></tr>
-                  <tr><td>Czwartek</td><td class="h-time">8:00 – 14:00</td></tr>
-                  <tr><td>Piątek</td><td class="h-time">8:00 – 14:00</td></tr>
+                  <tr><td>Poniedziałek</td><td class="h-time">8:00 – 20:00</td></tr>
+                  <tr><td>Wtorek</td><td class="h-time">8:00 – 20:00</td></tr>
+                  <tr><td>Środa</td><td class="h-time">8:00 – 20:00</td></tr>
+                  <tr><td>Czwartek</td><td class="h-time">8:00 – 20:00</td></tr>
+                  <tr><td>Piątek</td><td class="h-time">8:00 – 20:00</td></tr>
                   <tr><td>Sobota</td><td class="h-time">9:00 – 14:00</td></tr>
                   <tr class="closed-row"><td>Niedziela</td><td class="h-time">zamknięte</td></tr>
                 </table>
@@ -798,7 +801,7 @@
           <!-- Google Maps -->
           <div class="map-embed">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80000!2d19.0238!3d50.2649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716cf3b26ea9b25%3A0x59b5bd9e49ea7de5!2sKatowice!5e0!3m2!1spl!2spl!4v1700000000"
+              src="https://maps.google.com/maps?q=Ko%C5%9Bciuszki%2022,%2044-153%20So%C5%9Bnicowice&t=&z=15&ie=UTF8&iwloc=&output=embed"
               allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
               title="Mapa dojazdu GabiVet Sośnicowice">
             </iframe>
