@@ -20,100 +20,127 @@
   <style>
     /*
      * ══════════════════════════════════════════════════════
-     * PALETA ZAKTUALIZOWANA: LOGO GABIVET
-     * Główny akcent : #1ea34c   (żywa zieleń zgodna z logo)
-     * Ciemny akcent : #15803d   (hover / mocniejszy)
-     * Jasny akcent  : #86efac   (subtelne tła / glowy)
-     * Tło zielone   : rgba(30,163,76, …)
-     * Tło strony    : #273b30   (rozjaśniona, leśna zieleń)
-     * Sidebar       : #203328   (nieco ciemniejsza dla kontrastu)
-     * Sekcja alt    : #2e4538   (jaśniejsza dla przełamania)
+     * PALETA "EKSTREMALNE KIWI" (Tło strony w kolorze logo)
+     * Tło bazowe    : #00A651   (żywa zieleń z logo - główne tło)
+     * Tło alt 1     : #00964A   (nieco ciemniejsza dla przełamania)
+     * Tło alt 2     : #008742   (najciemniejsza zieleń dla sekcji)
+     * Sidebar       : #081C10   (bardzo ciemna zieleń dla kontrastu)
+     * Przyciski     : Białe / Ciemnozielone
+     * Tekst         : Biały (zwiększony kontrast)
      * ══════════════════════════════════════════════════════
      */
 
     /* ── HYPERSPACE NATIVE OVERRIDES ───────────────────── */
 
-    /* Ogólne tła sekcji – jaśniejsze i cieplejsze zielenie */
-    body                          { background-color: #273b30 !important; }
-    #wrapper > .wrapper.style1    { background-color: #273b30 !important; }
-    #wrapper > .wrapper.style2    { background-color: #2e4538 !important; }
-    #wrapper > .wrapper.style3    { background-color: #203328 !important; }
-    #wrapper > .wrapper.style1.fullscreen { background-color: #273b30 !important; }
+    /* Ogólne tła sekcji – teraz wszystko jest KIWI! */
+    body                          { background-color: #00A651 !important; }
+    #wrapper > .wrapper.style1    { background-color: #00A651 !important; }
+    #wrapper > .wrapper.style2    { background-color: #00964A !important; }
+    #wrapper > .wrapper.style3    { background-color: #008742 !important; }
+    #wrapper > .wrapper.style1.fullscreen { background-color: #00A651 !important; }
 
-    /* Sidebar */
-    #sidebar                      { background: #203328 !important; }
-    #sidebar .inner               { border-right-color: rgba(30,163,76,.2) !important; }
-    #sidebar nav ul li a          { border-top-color: rgba(30,163,76,.1) !important; }
+    /* ── SIDEBAR (CIEMNY DLA KONTRASTU) ────────────────── */
+    #sidebar                      { background: #081C10 !important; }
+    #sidebar .inner               { border-right: 1px solid rgba(255,255,255,0.1) !important; }
+    #sidebar nav ul li a          { 
+      color: rgba(255,255,255,0.6) !important; 
+      border-top-color: rgba(255,255,255,0.1) !important; 
+    }
     #sidebar nav ul li a:hover,
-    #sidebar nav ul li a.active   { color: #86efac !important; }
+    #sidebar nav ul li a.active   { 
+      color: #ffffff !important; 
+      background: rgba(255,255,255,0.1) !important; 
+      font-weight: bold;
+    }
 
-    /* Linki */
-    a                             { color: #86efac !important; }
-    a:hover                       { color: #bbf7d0 !important; }
+    /* Pasek nawigacji na urządzeniach mobilnych */
+    #titleBar                     { background: #081C10 !important; }
+    #titleBar .toggle::before     { color: #ffffff !important; }
+    #titleBar .title              { color: #ffffff !important; font-weight: bold; }
 
-    /* Przyciski – primary (kolor logo) */
+    /* ── LINKI I AKCENTY ───────────────────────────────── */
+    a                             { color: #D1FAE5 !important; } /* bardzo jasna mięta/biel */
+    a:hover                       { color: #ffffff !important; }
+
+    /* Przyciski – primary (teraz białe, bo tło jest zielone) */
     input[type="submit"].primary,
     input[type="reset"].primary,
     input[type="button"].primary,
     button.primary,
     .button.primary {
-      background-color: #1ea34c !important;
-      border-color: #1ea34c !important;
-      color: #ffffff !important;
+      background-color: #ffffff !important;
+      border-color: #ffffff !important;
+      color: #00A651 !important;
+      font-weight: bold !important;
     }
     input[type="submit"].primary:hover,
     .button.primary:hover {
-      background-color: #15803d !important;
-      border-color: #15803d !important;
+      background-color: #e2e8f0 !important;
+      border-color: #e2e8f0 !important;
+      color: #008742 !important;
     }
 
     /* Przyciski – ghost/outline */
     .button:not(.primary) {
-      border-color: rgba(30,163,76,.5) !important;
-      color: #86efac !important;
+      border-color: rgba(255, 255, 255, .6) !important;
+      color: #ffffff !important;
     }
     .button:not(.primary):hover {
-      background-color: rgba(30,163,76,.15) !important;
-      border-color: #1ea34c !important;
+      background-color: rgba(255, 255, 255, .2) !important;
+      border-color: #ffffff !important;
       color: #ffffff !important;
     }
 
     /* Ikony w sekcji .features (Usługi) */
     .wrapper.style3 .features li > .icon {
-      color: #1ea34c !important;
+      color: #ffffff !important;
     }
     .wrapper.style3 .features li > .icon::before {
-      background: rgba(30,163,76,.1) !important;
-      border-color: rgba(30,163,76,.3) !important;
+      background: rgba(0, 0, 0, .1) !important;
+      border-color: rgba(255, 255, 255, .4) !important;
+      border-width: 2px !important;
     }
 
     /* Input focus */
     input[type="text"]:focus,
     input[type="email"]:focus,
     input[type="tel"]:focus,
-    textarea:focus {
-      border-color: #1ea34c !important;
+    textarea:focus,
+    select:focus {
+      border-color: #ffffff !important;
+      box-shadow: 0 0 0 1px #ffffff !important;
     }
 
     /* Scrolly / anchor active */
-    .scrolly                      { border-bottom-color: #1ea34c !important; }
+    .scrolly                      { border-bottom-color: rgba(255,255,255,0.5) !important; }
 
-    /* Uaktualnienie rgba dla pozostałych elementów (np. ramki, tabele) */
+    /* Uaktualnienie ramki, tabele, tła kart */
     .quick-info, .price-table-wrap, .map-embed, .parking-box, .patient-card, .review-card {
-      border-color: rgba(30,163,76,.25) !important;
+      border-color: rgba(255, 255, 255, .3) !important;
     }
     .price-table thead, .price-table .cat-row td, .parking-box, .patient-card, .review-card, .map-embed-footer {
-      background: rgba(30,163,76,.08) !important;
+      background: rgba(0, 0, 0, .15) !important;
     }
     .quick-info-item i, .patient-card .pc-icon, .parking-box i, .price-table thead th, .price-table .cat-row td {
-      color: #86efac !important;
+      color: #ffffff !important;
     }
     .patient-card ul li::before {
-      color: #1ea34c !important;
+      color: #ffffff !important;
     }
     .review-avatar {
-      background: rgba(30,163,76,.2);
-      color: #86efac;
+      background: #ffffff !important;
+      color: #00A651 !important;
+    }
+
+    /* ── KONTRAST TEKSTÓW ──────────────────────────────── */
+    h1, h2, h3, h4, h5, h6, p, ul, li, span, td, strong {
+      color: #ffffff !important;
+    }
+    .quick-info-item, .review-text, .price-table td, .patient-card ul li, .parking-box p, .map-embed-footer p, .hours-table td {
+      color: rgba(255,255,255,0.95) !important;
+    }
+    .review-pet, .price-note-cell, .closed-row .h-time {
+      color: rgba(255,255,255,0.7) !important;
     }
 
     /* ── QUICK INFO ────────────────────────────────────── */
@@ -122,15 +149,13 @@
       gap: 2em;
       margin-top: 1.4em;
       padding-top: 1.4em;
-      border-top: 1px solid rgba(106,171,132,.2);
+      border-top: 1px solid rgba(255, 255, 255, .3);
       flex-wrap: wrap;
     }
     .quick-info-item {
       display: flex; align-items: center; gap: .55em;
-      font-size: .82em; color: rgba(255,255,255,.6);
+      font-size: .82em; 
     }
-    .quick-info-item i        { color: #9dd4b4; }
-    .quick-info-item strong   { color: rgba(255,255,255,.85); }
 
     /* ── REVIEWS ───────────────────────────────────────── */
     .reviews-grid {
@@ -140,37 +165,30 @@
       margin-top: 1.5em;
     }
     .review-card {
-      background: rgba(106,171,132,.06);
-      border: 1px solid rgba(106,171,132,.18);
       border-radius: 8px;
       padding: 1.5em;
     }
-    .review-stars { color: #d4a832; margin-bottom: .6em; font-size: .95em; }
-    .review-text  { font-size: .88em; font-style: italic; color: rgba(255,255,255,.6); margin-bottom: 1em; }
+    .review-stars { color: #F59E0B !important; margin-bottom: .6em; font-size: .95em; }
+    .review-text  { font-size: .88em; font-style: italic; margin-bottom: 1em; }
     .review-author { display: flex; align-items: center; gap: .7em; }
     .review-avatar {
       width: 36px; height: 36px; border-radius: 50%;
-      background: rgba(106,171,132,.2);
       display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: .8em; color: #9dd4b4;
+      font-weight: 700; font-size: .8em;
       flex-shrink: 0;
     }
-    .review-name { font-size: .82em; font-weight: 700; color: #fff; }
-    .review-pet  { font-size: .72em; color: rgba(255,255,255,.45); }
+    .review-name { font-size: .82em; font-weight: 700; }
+    .review-pet  { font-size: .72em; }
 
     /* ── PRICING TABLE ─────────────────────────────────── */
     .price-table-wrap {
       overflow-x: auto;
       border-radius: 8px;
-      border: 1px solid rgba(106,171,132,.2);
       margin: 1.5em 0;
     }
     .price-table {
       width: 100%; border-collapse: collapse;
       font-size: .88em;
-    }
-    .price-table thead {
-      background: rgba(106,171,132,.14);
     }
     .price-table thead th {
       padding: .85em 1.1em;
@@ -178,41 +196,38 @@
       font-size: .72em;
       text-transform: uppercase;
       letter-spacing: .12em;
-      color: #9dd4b4;
       font-weight: 700;
     }
     .price-table tbody tr {
-      border-bottom: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.15);
       transition: background .15s;
     }
     .price-table tbody tr:last-child { border-bottom: none; }
-    .price-table tbody tr:hover { background: rgba(106,171,132,.05); }
-    .price-table td { padding: .8em 1.1em; color: rgba(255,255,255,.7); }
+    .price-table tbody tr:hover { background: rgba(0, 0, 0, .1); }
+    .price-table td { padding: .8em 1.1em; }
     .price-table .cat-row td {
       font-size: .72em; font-weight: 700;
       text-transform: uppercase; letter-spacing: .1em;
-      color: #9dd4b4; padding: .55em 1.1em;
-      background: rgba(106,171,132,.1);
+      padding: .55em 1.1em;
     }
     .price-table .price-val {
-      font-weight: 700; color: #fff;
+      font-weight: 700;
       text-align: right; white-space: nowrap;
     }
     .price-table .price-note-cell {
-      font-size: .8em; color: rgba(255,255,255,.45);
+      font-size: .8em; 
     }
 
     .price-legal {
-      background: rgba(200,140,30,.07);
-      border: 1px solid rgba(200,140,30,.2);
-      border-left: 4px solid #c8893a;
+      background: rgba(0, 0, 0, .15) !important;
+      border: 1px solid rgba(255, 255, 255, .3);
+      border-left: 4px solid #F59E0B !important;
       border-radius: 6px;
       padding: 1em 1.3em;
       font-size: .82em;
-      color: rgba(255,255,255,.6);
       line-height: 1.7;
     }
-    .price-legal strong { color: #d4a832; }
+    .price-legal strong { color: #FCD34D !important; }
 
     /* ── PATIENT CARDS ─────────────────────────────────── */
     .patient-cards {
@@ -222,19 +237,17 @@
       margin-top: 1.5em;
     }
     .patient-card {
-      background: rgba(106,171,132,.06);
-      border: 1px solid rgba(106,171,132,.18);
       border-radius: 8px;
       padding: 1.6em;
     }
     .patient-card .pc-icon {
-      font-size: 2em; color: #9dd4b4;
+      font-size: 2em;
       margin-bottom: .65em;
       display: block;
     }
     .patient-card h3 {
       font-size: 1em !important;
-      border-bottom: 1px solid rgba(106,171,132,.2);
+      border-bottom: 1px solid rgba(255, 255, 255, .3);
       padding-bottom: .6em; margin-bottom: .8em;
     }
     .patient-card ul {
@@ -243,69 +256,65 @@
     }
     .patient-card ul li {
       font-size: .82em;
-      color: rgba(255,255,255,.6);
       padding: .35em 0;
-      border-bottom: 1px solid rgba(255,255,255,.05);
+      border-bottom: 1px solid rgba(255,255,255,.15);
       display: flex; gap: .55em; align-items: flex-start;
       line-height: 1.5;
     }
     .patient-card ul li:last-child { border-bottom: none; }
     .patient-card ul li::before {
       content: '✓';
-      color: #6aab84; font-weight: 700;
+      font-weight: 700;
       flex-shrink: 0; margin-top: .05em;
     }
 
     /* ── HOURS TABLE ───────────────────────────────────── */
     .hours-wrap { margin-bottom: 1.5em; }
     .hours-table { width: 100%; border-collapse: collapse; font-size: .88em; }
-    .hours-table tr { border-bottom: 1px solid rgba(255,255,255,.08); }
+    .hours-table tr { border-bottom: 1px solid rgba(255,255,255,.15); }
     .hours-table tr:last-child { border-bottom: none; }
-    .hours-table td { padding: .5em .25em; color: rgba(255,255,255,.65); }
-    .hours-table .h-time { text-align: right; font-weight: 700; color: #fff; }
-    .hours-table .today-row td  { color: #9dd4b4; }
-    .hours-table .today-row .h-time { color: #9dd4b4; }
-    .hours-table .closed-row .h-time { color: rgba(255,255,255,.3); font-weight: 400; }
+    .hours-table td { padding: .5em .25em; }
+    .hours-table .h-time { text-align: right; font-weight: 700; }
+    .hours-table .today-row td  { font-weight: bold; background: rgba(0,0,0,0.1); }
+    .hours-table .today-row .h-time { color: #ffffff; }
+    .hours-table .closed-row .h-time { font-weight: 400; }
 
     /* ── MAP EMBED ─────────────────────────────────────── */
     .map-embed {
       border-radius: 8px;
       overflow: hidden;
-      border: 1px solid rgba(106,171,132,.2);
       margin-top: 1.5em;
+      border: 1px solid rgba(255,255,255,0.3) !important;
     }
     .map-embed iframe { width: 100%; height: 280px; border: none; display: block; }
     .map-embed-footer {
-      background: rgba(106,171,132,.06);
       padding: .85em 1.1em;
       display: flex; justify-content: space-between; align-items: center;
-      border-top: 1px solid rgba(106,171,132,.15);
+      border-top: 1px solid rgba(255, 255, 255, .3);
       gap: 1em; flex-wrap: wrap;
     }
-    .map-embed-footer p { margin: 0; font-size: .8em; color: rgba(255,255,255,.5); }
+    .map-embed-footer p { margin: 0; font-size: .8em; }
     .map-embed-footer a.btn-map {
-      background: #6aab84 !important;
-      color: #0d1a13 !important;
+      background: #ffffff !important;
+      color: #00A651 !important;
       padding: .4em 1em;
       border-radius: 4px;
       font-size: .8em; font-weight: 700;
       text-decoration: none !important;
       white-space: nowrap;
     }
-    .map-embed-footer a.btn-map:hover { background: #4d8a65 !important; }
+    .map-embed-footer a.btn-map:hover { background: #e2e8f0 !important; }
 
     /* ── PARKING BOX ───────────────────────────────────── */
     .parking-box {
-      background: rgba(106,171,132,.08);
-      border: 1px solid rgba(106,171,132,.22);
       border-radius: 6px;
       padding: .9em 1.2em;
       display: flex; gap: .8em; align-items: flex-start;
       margin-top: 1em; font-size: .85em;
     }
-    .parking-box i { color: #9dd4b4; margin-top: .2em; flex-shrink: 0; }
-    .parking-box p { margin: 0; color: rgba(255,255,255,.6); line-height: 1.6; }
-    .parking-box strong { color: #9dd4b4; display: block; margin-bottom: .2em; }
+    .parking-box i { margin-top: .2em; flex-shrink: 0; }
+    .parking-box p { margin: 0; line-height: 1.6; }
+    .parking-box strong { display: block; margin-bottom: .2em; }
 
     /* ── GALLERY ───────────────────────────────────────── */
     .gallery-mini {
@@ -319,16 +328,16 @@
       border-radius: 6px;
       overflow: hidden;
       aspect-ratio: 1;
-      border: 1px solid rgba(106,171,132,.18);
+      border: 1px solid rgba(255, 255, 255, .3);
     }
     .gallery-mini a:first-child { grid-column: span 2; aspect-ratio: 2/1; }
     .gallery-mini img {
       width: 100%; height: 100%;
       object-fit: cover; display: block;
       transition: transform .4s, filter .4s;
-      filter: brightness(.85) saturate(.9);
+      filter: brightness(.9) saturate(1);
     }
-    .gallery-mini a:hover img { transform: scale(1.05); filter: brightness(1) saturate(1.1); }
+    .gallery-mini a:hover img { transform: scale(1.05); filter: brightness(1.1) saturate(1.1); }
 
     /* ── SPOTLIGHTS TWEAK ──────────────────────────────── */
     #about.wrapper.style2.spotlights section .image {
@@ -336,35 +345,39 @@
     }
 
     /* Spec label colour inside spotlight */
-    #about p[style*="color:#9dd4b4"] { color: #9dd4b4 !important; }
+    #about p[style*="color:#4ADE80"] { color: #ffffff !important; opacity: 0.9; }
 
-    /* ── FORM SELECT ───────────────────────────────────── */
-    .field select {
+    /* ── FORM SELECT, INPUTS & SUCCESS ─────────────────── */
+    input[type="text"], input[type="tel"], input[type="email"], textarea, .field select {
       width: 100%;
-      background: rgba(106,171,132,.05);
-      border: solid 1px rgba(106,171,132,.25);
-      color: rgba(255,255,255,.65);
+      background: rgba(0, 0, 0, .1) !important;
+      border: solid 1px rgba(255, 255, 255, .4) !important;
+      color: #ffffff !important;
       border-radius: 4px;
       padding: 0 1em;
-      height: 2.75em;
       font-size: 1em;
       font-family: inherit;
       outline: none;
-      -webkit-appearance: none;
     }
-    .field select:focus { border-color: #6aab84; }
-    .field select option { background: #1a2b22; }
+    .field select { height: 2.75em; -webkit-appearance: none; }
+    .field select option { background: #008742 !important; color: #fff !important; }
+    
+    /* Placeholder color */
+    ::placeholder { color: rgba(255,255,255,0.6) !important; opacity: 1; }
+    :-ms-input-placeholder { color: rgba(255,255,255,0.6) !important; }
+    ::-ms-input-placeholder { color: rgba(255,255,255,0.6) !important; }
 
     .form-success {
       display: none;
-      background: rgba(106,171,132,.12);
-      border: 1px solid rgba(106,171,132,.35);
+      background: rgba(255, 255, 255, .2);
+      border: 1px solid #ffffff;
       border-radius: 4px;
       padding: .75em 1em;
       margin-top: .75em;
-      color: #9dd4b4;
+      color: #ffffff;
       font-size: .88em;
       text-align: center;
+      font-weight: bold;
     }
 
     /* ── RESPONSIVE ────────────────────────────────────── */
@@ -382,13 +395,13 @@
 
     /* ── LOGO MOBILNE ──────────────────────────────────── */
     .mobile-logo {
-      display: none; /* Domyślnie ukryte na komputerze */
+      display: none;
     }
     
     @media screen and (max-width: 980px) {
       .mobile-logo {
-        display: block; /* Pokazuj na ekranach mniejszych niż 980px */
-        max-width: 180px; /* Rozmiar idealny na telefon */
+        display: block;
+        max-width: 180px;
         background: #fff;
         padding: 10px;
         border-radius: 6px;
@@ -396,15 +409,28 @@
       }
     }
 
+    /* ── NAPRAWA WIDOCZNOŚCI (IFRAME/PODGLĄD) ──────────── */
+    /* Wyłączenie początkowego ukrywania elementów przez skrypty animacji */
+    .fade-up,
+    .wrapper > .inner,
+    .spotlights > section > .image,
+    .spotlights > section > .content {
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+      transition: none !important;
+      animation: none !important;
+    }
+
   </style>
 </head>
-<body class="is-preload">
+<body class="">
 
 <!-- ═══════════════ SIDEBAR ═══════════════ -->
 <section id="sidebar">
   <div class="inner">
     <a href="#intro" class="logo scrolly" style="display: block; text-align: center; margin-bottom: 2em;">
-  <img src="logo.jpg" alt="GabiVet Logo" style="max-width: 85%; height: auto; background: #fff; padding: 10px; border-radius: 6px;" />
+  <img src="logo.png" alt="GabiVet Logo" style="max-width: 85%; height: auto; background: #fff; padding: 10px; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" />
     </a>
     
     <nav>
@@ -428,11 +454,11 @@
 <section id="intro" class="wrapper style1 fullscreen fade-up">
     <div class="inner">
 
-      <img src="logo.jpg" alt="GabiVet Logo" class="mobile-logo" />
+      <img src="logo.png" alt="GabiVet Logo" class="mobile-logo" />
 
       <h1>Gabinet Weterynaryjny</h1>
-      <p>Kompleksowa opieka weterynaryjna dla psów, kotów i innych małych zwierząt towarzyszących.<br>
-      Lekarz weterynarii – indywidualne podejście do każdego pacjenta.</p>
+      <p>Kompleksowa opieka weterynaryjna dla psów, kotów, koni i zwierząt egzotycznych w Sośnicowicach.<br>
+      Lekarz weterynarii Gabriela Rusak · nowoczesny sprzęt · indywidualne podejście do każdego pacjenta.</p>
 
       <ul class="actions">
         <li><a href="#contact" class="button scrolly primary">Umów wizytę</a></li>
@@ -469,9 +495,9 @@
       </a>
       <div class="content">
         <div class="inner">
-          <h2>Lek. wet. Gabriela Rusak</h2>
-          <p style="color:#6EE7B7;font-size:.82em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5em">Lekarz weterynarii · właścicielka gabinetu</p>
-          <p>Absolwentka Wydziału Medycyny Weterynaryjnej we Wrocławiu. Prowadzi GabiVet samodzielnie — co oznacza, że każda wizyta, każdy zabieg i każda decyzja terapeutyczna przechodzi przez jedną parę rąk i jeden umysł doskonale znający historię Twojego zwierzęcia.</p>
+          <h2>Lekarz Weterynarii Gabriela Rusak</h2>
+          <p style="color:#4ADE80;font-size:.82em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5em">Lekarz weterynarii · właścicielka gabinetu</p>
+          <p>Absolwentka Wydziału Medycyny Weterynaryjnej. Prowadzi GabiVet samodzielnie — co oznacza, że każda wizyta, każdy zabieg i każda decyzja terapeutyczna przechodzi przez jedną parę rąk i jeden umysł doskonale znający historię Twojego zwierzęcia.</p>
           <p>W jednoosobowym gabinecie nie ma anonimowości — dr Rusak pamięta imiona swoich pacjentów, ich charakter i wcześniejsze dolegliwości. Regularnie uczestniczy w kursach i konferencjach specjalistycznych, by łączyć osobiste zaangażowanie z aktualną wiedzą medyczną.</p>
         </div>
       </div>
@@ -483,61 +509,55 @@
   <section id="services" class="wrapper style3 fade-up">
     <div class="inner">
       <h2>Zakres usług weterynaryjnych</h2>
-      <p>Oferujemy kompleksowe usługi opieki — od rutynowych wizyt kontrolnych, szczepień, po diagnostykę, zabiegi chirurgiczne, stomatologię i drobne zabiegi. Wszystko, czego potrzebuje Twój zwierzak, w jednym miejscu. W skomplikowanych przypadkach pacjenci kierowani są do specjalistycznych placówek, z którymi współpracujemy.</p>
+      <p>Oferujemy kompleksową opiekę — od rutynowych wizyt kontrolnych po skomplikowane zabiegi chirurgiczne. Wszystko, czego potrzebuje Twój zwierzak, w jednym miejscu.</p>
       <div class="features">
 
         <section>
           <span class="icon solid major fa-syringe"></span>
           <h3>Profilaktyka</h3>
-          <p>Szczepienia ochronne, odrobaczanie, czipowanie, wystawianie paszportów, regularne przeglądy zdrowotne.</p>
+          <p>Szczepienia ochronne (wścieklizna, DHPPiL, FeLV i inne), odrobaczanie, czipowanie z rejestracją w bazie Safe-Animal, wystawianie paszportów UE, regularne przeglądy zdrowotne.</p>
         </section>
 
         <section>
           <span class="icon solid major fa-microscope"></span>
           <h3>Diagnostyka laboratoryjna</h3>
-          <p>Badanie krwi (morfologia i biochemia), badania genetyczne, badanie moczu i kału, cytologia oraz biopsje cienkoigłowe.</p>
+          <p>Morfologia i biochemia krwi (wyniki w ~30 min), badanie ogólne moczu, badanie kału (parazytologia metodą flotacji), cytologia i biopsja cienkoigłowa zmian skórnych i guzów.</p>
         </section>
 
         <section>
-          <span class="icon solid major fa-desktop"></span>
-          <h3>Diagnostyka obrazowa USG</h3>
-          <p>USG jamy brzusznej, pęcherza moczowego, ocena przebiegu ciąży. Pełna interpretacja wyników na miejscu, archiwizacja cyfrowa.</p>
+          <span class="icon solid major fa-x-ray"></span>
+          <h3>Diagnostyka obrazowa</h3>
+          <p>Ultrasonografia narządów jamy brzusznej, echo serca, USG ciąży. Cyfrowe RTG klatki piersiowej, układu kostnego i brzucha. Pełna interpretacja wyników na miejscu, archiwizacja cyfrowa.</p>
         </section>
 
         <section>
           <span class="icon solid major fa-procedures"></span>
           <h3>Chirurgia</h3>
-          <p>Sterylizacje i kastracje psów i kotów, usuwanie guzów sutka i zmian skórnych, operacje ropomacicza.</p>
+          <p>Sterylizacja i kastracja psów i kotów, usuwanie guzów sutka i zmian skórnych, chirurgia ortopedyczna (złamania, stawy), zabiegi gastroenterologiczne, cięcie cesarskie, gastropeksja.</p>
         </section>
 
         <section>
           <span class="icon solid major fa-tooth"></span>
           <h3>Stomatologia weterynaryjna</h3>
-          <p>Ultradźwiękowe usuwanie kamienia nazębnego z polerowaniem zębów, ekstrakcje zębów, leczenie przyzębia i chorób dziąseł.</p>
+          <p>Ultradźwiękowe usuwanie kamienia nazębnego (skaling) z polerowaniem zębów, ekstrakcje zębów nadmiarowych i uszkodzonych, leczenie zapalenia dziąseł i chorób przyzębia.</p>
         </section>
 
         <section>
           <span class="icon solid major fa-allergies"></span>
-          <h3>Dermatologia i alergologia</h3>
-          <p>Diagnostyka i leczenie atopowego zapalenia skóry, alergii pokarmowych, pasożytów skórnych oraz grzybicy. Testy alergiczne i immunoterapia swoista.</p>
+          <h3>Dermatologia i alergia</h3>
+          <p>Diagnostyka i leczenie atopowego zapalenia skóry, alergii pokarmowych, grzybic, otodekozy (świerzbu uszu), chorób łap i pazurów. Testy alergiczne i immunoterapia swoista.</p>
         </section>
 
         <section>
-          <span class="icon solid major fa-stethoscope"></span>
-          <h3>Interna</h3>
-          <p>Leczenie chorób górnych i dolnych dróg oddechowych, układu pokarmowego, wątroby i nerek. Zaburzenia endokrynologiczne (tarczyca, nadnercza) oraz choroby układu moczowo-płciowego.</p>
-        </section>
-        
-        <section>
-          <span class="icon solid major fa-horse"></span>
-          <h3>Konie</h3>
-          <p>Szczepienia koni z wpisem do paszportu, odrobaczanie, badania laboratoryjne oraz specjalistyczne preparaty dostępne na miejscu w gabinecie.</p>
+          <span class="icon solid major fa-dove"></span>
+          <h3>Zwierzęta egzotyczne</h3>
+          <p>Opieka nad królikami, świnkami morskimi, fretkami, gadami (węże, agamy, żółwie), ptakami i płazami. Specjalistyczne porady żywieniowe i profilaktyczne dla każdego gatunku.</p>
         </section>
 
         <section>
           <span class="icon solid major fa-house-medical"></span>
-          <h3>Wizyty domowe</h3>
-          <p>Oferujemy wizyty domowe dla zwierząt, w przypadku których problemem jest stres lub transport do placówki stacjonarnej.</p>
+          <h3>Wizyty domowe i dyżur 24h</h3>
+          <p>Wizyty domowe dla zwierząt, które nie powinny być transportowane (stres, stan zdrowia). Dyżur telefoniczny — dr Rusak jest osiągalna w nagłych sytuacjach poza godzinami przyjęć.</p>
         </section>
 
       </div>
@@ -559,38 +579,36 @@
             <tr>
               <th style="width:45%">Usługa</th>
               <th>Uwagi</th>
-              <th style="width:130px;text-align:right">Cena</th>
+              <th style="width:130px;text-align:right">Cena od</th>
             </tr>
           </thead>
           <tbody>
             <tr class="cat-row"><td colspan="3">Wizyty i konsultacje</td></tr>
-            <tr><td>Konsultacja ogólna</td><td class="price-note-cell">Badanie fizykalne, wywiad (bez leków)</td><td class="price-val">170 zł</td></tr>
-            <tr><td>Wizyta domowa</td><td class="price-note-cell">Badanie (bez leków), w promieniu 10 km</td><td class="price-val">250 zł</td></tr>
+            <tr><td>Konsultacja ogólna</td><td class="price-note-cell">Badanie fizykalne + wywiad</td><td class="price-val">80 zł</td></tr>
+            <tr><td>Konsultacja specjalistyczna</td><td class="price-note-cell">Dermatolog, chirurg</td><td class="price-val">130 zł</td></tr>
+            <tr><td>Wizyta domowa</td><td class="price-note-cell">W promieniu 10 km</td><td class="price-val">200 zł</td></tr>
 
             <tr class="cat-row"><td colspan="3">Profilaktyka</td></tr>
-            <tr><td>Szczepienie p/wściekliźnie</td><td class="price-note-cell">Wpis do książeczki / paszportu</td><td class="price-val">70 zł</td></tr>
-            <tr><td>Szczepienie kot (podstawowe)</td><td class="price-note-cell"></td><td class="price-val">120 zł</td></tr>
-            <tr><td>Szczepienie p/chorobom zakaźnym</td><td class="price-note-cell"></td><td class="price-val">120 zł</td></tr>
-            <tr><td>Szczepienie kompleksowe</td><td class="price-note-cell">Wścieklizna + ch. zakaźne</td><td class="price-val">150 zł</td></tr>
-            <tr><td>Czipowanie</td><td class="price-note-cell">Czip + implantacja</td><td class="price-val">90 zł</td></tr>
-            <tr><td>Paszport UE</td><td class="price-note-cell">Psy, koty, fretki</td><td class="price-val">190 zł</td></tr>
-            <tr><td>Obcięcie pazurów</td><td class="price-note-cell">Pies, kot</td><td class="price-val">40 zł</td></tr>
-            <tr><td>Opróżnienie gruczołów okołoodbytowych</td><td class="price-note-cell">Pies</td><td class="price-val">50 zł</td></tr>
-            <tr><td>Antykoncepcja hormonalna</td><td class="price-note-cell">Suka, kotka</td><td class="price-val">20 - 200 zł</td></tr>
+            <tr><td>Szczepienie (wścieklizna)</td><td class="price-note-cell">Wpis do paszportu</td><td class="price-val">80 zł</td></tr>
+            <tr><td>Szczepienie kompleksowe pies</td><td class="price-note-cell">DHPPiL</td><td class="price-val">120 zł</td></tr>
+            <tr><td>Szczepienie kompleksowe kot</td><td class="price-note-cell">FPV+FHV+FCV</td><td class="price-val">100 zł</td></tr>
+            <tr><td>Czipowanie + rejestracja</td><td class="price-note-cell">Transponder ISO</td><td class="price-val">90 zł</td></tr>
+            <tr><td>Paszport UE</td><td class="price-note-cell">Psy, koty, fretki</td><td class="price-val">80 zł</td></tr>
+            <tr><td>Obcięcie pazurów</td><td class="price-note-cell">Pies lub kot</td><td class="price-val">40 zł</td></tr>
 
             <tr class="cat-row"><td colspan="3">Diagnostyka</td></tr>
-            <tr><td>Badanie krwi</td><td class="price-note-cell">Podstawowe</td><td class="price-val">od 150 zł</td></tr>
-            <tr><td>Badanie moczu</td><td class="price-note-cell">Z osadem</td><td class="price-val">od 60 zł</td></tr>
-            <tr><td>Badanie kału</td><td class="price-note-cell">Sedymentacja, flotacja, ELISA</td><td class="price-val">od 100 zł</td></tr>
-            <tr><td>Badanie USG</td><td class="price-note-cell">Jama brzuszna</td><td class="price-val">od 50 zł + wizyta</td></tr>
+            <tr><td>Morfologia krwi</td><td class="price-note-cell">Wynik w ~30 min</td><td class="price-val">80 zł</td></tr>
+            <tr><td>Biochemia krwi (profil)</td><td class="price-note-cell">8–12 parametrów</td><td class="price-val">120 zł</td></tr>
+            <tr><td>Badanie moczu</td><td class="price-note-cell">Z osadem</td><td class="price-val">60 zł</td></tr>
+            <tr><td>USG jamy brzusznej</td><td class="price-note-cell">Narządy miąższowe</td><td class="price-val">180 zł</td></tr>
+            <tr><td>RTG (1 projekcja)</td><td class="price-note-cell">Klatka, kości, brzuch</td><td class="price-val">120 zł</td></tr>
 
-            <tr class="cat-row"><td colspan="3">Chirurgia i stomatologia</td></tr>
-            <tr><td>Kastracja kota</td><td class="price-note-cell">Samiec</td><td class="price-val">300 zł</td></tr>
-            <tr><td>Sterylizacja kotki</td><td class="price-note-cell">Samica</td><td class="price-val">450 zł</td></tr>
-            <tr><td>Kastracja psa</td><td class="price-note-cell">Samiec, zależnie od wagi</td><td class="price-val">od 500 zł</td></tr>
-            <tr><td>Sterylizacja suki</td><td class="price-note-cell">Samica, zależnie od wagi</td><td class="price-val">od 650 zł</td></tr>
-            <tr><td>Sanacja jamy ustnej</td><td class="price-note-cell">Usunięcie kamienia w narkozie</td><td class="price-val">od 500 zł</td></tr>
-            <tr><td>Ekstrakcje zębów</td><td class="price-note-cell">W narkozie</td><td class="price-val">od 100 zł</td></tr>
+            <tr class="cat-row"><td colspan="3">Chirurgia i zabiegi</td></tr>
+            <tr><td>Kastracja kota (samiec)</td><td class="price-note-cell">Znieczulenie</td><td class="price-val">250 zł</td></tr>
+            <tr><td>Sterylizacja kotki</td><td class="price-note-cell">Znieczulenie ogólne</td><td class="price-val">450 zł</td></tr>
+            <tr><td>Kastracja psa</td><td class="price-note-cell">Zależy od wagi</td><td class="price-val">400 zł</td></tr>
+            <tr><td>Sterylizacja suki</td><td class="price-note-cell">Zależy od wagi</td><td class="price-val">600 zł</td></tr>
+            <tr><td>Skaling + polerowanie</td><td class="price-note-cell">Znieczulenie ogólne</td><td class="price-val">350 zł</td></tr>
           </tbody>
         </table>
       </div>
@@ -606,7 +624,7 @@
   <section id="patient" class="wrapper style2 fade-up">
     <div class="inner">
       <h2>Strefa pacjenta — poradnik</h2>
-      <p>Kilka praktycznych wskazówek, które pomogą Tobie i Twojemu zwierzęciu dobrze przygotować się do wizyty lub do pobrania materiału do badań.</p>
+      <p>Kilka praktycznych wskazówek, które pomogą Tobie i Twojemu zwierzęciu dobrze przygotować się do wizyty lub zabiegu — i zaoszczędzą czas na recepcji.</p>
 
       <div class="patient-cards">
 
@@ -614,34 +632,38 @@
           <i class="fas fa-paw pc-icon"></i>
           <h3>Pierwsza wizyta</h3>
           <ul>
-            <li>Zabierz poprzednie wyniki badań i karty z innych gabinetów</li>
-            <li>Wystawienie książeczki lub paszportu (w przypadku szczeniąt/kociąt) na miejscu</li>
+            <li>Zabierz książeczkę zdrowia lub paszport europejski</li>
+            <li>Weź poprzednie wyniki badań i karty z innych gabinetów</li>
             <li>Zanotuj datę ostatniego szczepienia i odrobaczania</li>
+            <li>Przygotuj listę objawów i od kiedy je obserwujesz</li>
             <li>Zapisz stosowane aktualnie leki i dawkowanie</li>
             <li>Kota lub małe zwierzę przywieź w transporterze</li>
           </ul>
         </div>
 
         <div class="patient-card">
-          <i class="fas fa-vial pc-icon"></i>
-          <h3>Badanie krwi</h3>
+          <i class="fas fa-hospital pc-icon"></i>
+          <h3>Przygotowanie do zabiegu / znieczulenia</h3>
           <ul>
-            <li>Pacjent musi być na czczo (bez jedzenia, woda jest dozwolona)</li>
-            <li>Najlepiej zgłosić się na pobranie w godzinach porannych</li>
-            <li>Ogranicz stres zwierzęcia w drodze do gabinetu</li>
-            <li>Poinformuj lekarza o przyjmowanych na stałe lekach</li>
+            <li>Zachowaj 12-godzinną głodówkę przed znieczuleniem ogólnym</li>
+            <li>Wodę można podawać do 2–4 godzin przed zabiegiem</li>
+            <li>Nie dawaj leków w dniu zabiegu bez konsultacji</li>
+            <li>Poinformuj o chorobach serca, nerek lub wątroby</li>
+            <li>Zaplanuj transport — po znieczuleniu zwierzę nie wraca samo</li>
+            <li>Przygotuj ciche, ciepłe miejsce do odpoczynku w domu</li>
           </ul>
         </div>
 
         <div class="patient-card">
           <i class="fas fa-flask pc-icon"></i>
-          <h3>Badanie moczu i kału</h3>
+          <h3>Jak zebrać próbki do badań</h3>
           <ul>
-            <li><strong>Mocz:</strong> pobierz próbkę do specjalnego pojemnika</li>
-            <li><strong>Kał:</strong> niewielką ilość umieść w szczelnym pojemniku</li>
-            <li>Pojemniki na mocz/kał odbierzesz <strong>bezpłatnie w naszej recepcji</strong></li>
-            <li>Pojemniki możesz też zakupić w każdej aptece ludzkiej</li>
-            <li>Dostarcz próbkę najszybciej jak to możliwe po pobraniu</li>
+            <li><strong>Mocz:</strong> poranna próbka ~5–10 ml do czystego pojemnika</li>
+            <li>Dostarcz mocz w ciągu 2 godzin od pobrania</li>
+            <li><strong>Kał:</strong> ok. 1 łyżeczka do szczelnego pojemnika</li>
+            <li>Próbka kału powinna być świeża — z dnia badania</li>
+            <li>Oznacz pojemnik imieniem zwierzęcia i datą pobrania</li>
+            <li>Pojemniki odbierz bezpłatnie w recepcji gabinetu</li>
           </ul>
         </div>
 
@@ -679,12 +701,12 @@
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Pełen profesjonalizm i świetne podejście do koni. Zawsze można liczyć na trafną diagnozę i cenne porady hodowlane."</p>
+          <p class="review-text">"Przyszłam ze świnką morską — tutaj podeszli z prawdziwą wiedzą i entuzjazmem. Widać, że naprawdę kochają zwierzęta. Polecam każdemu!"</p>
           <div class="review-author">
             <div class="review-avatar">AN</div>
             <div>
               <div class="review-name">Agnieszka Nowak</div>
-              <div class="review-pet">🐴 właścicielka konia · Google Maps</div>
+              <div class="review-pet">🐹 właścicielka świnki · Google Maps</div>
             </div>
           </div>
         </div>
@@ -717,7 +739,9 @@
                   <option value="">— wybierz —</option>
                   <option>Pies</option>
                   <option>Kot</option>
-                  <option>Koń</option>
+                  <option>Królik</option>
+                  <option>Ptak</option>
+                  <option>Gad / płaz</option>
                   <option>Inne</option>
                 </select>
               </div>
@@ -727,7 +751,7 @@
                   <option value="">— wybierz —</option>
                   <option>Konsultacja ogólna</option>
                   <option>Szczepienie / profilaktyka</option>
-                  <option>Diagnostyka (USG/krew)</option>
+                  <option>Diagnostyka (USG/RTG/krew)</option>
                   <option>Chirurgia / zabieg</option>
                   <option>Stomatologia</option>
                   <option>Nagły przypadek</option>
@@ -757,7 +781,11 @@
             </li>
             <li>
               <h3>Telefon</h3>
-              <a href="tel:+48510110169">510 110 169</a>
+              <a href="tel:+48321234567">510 110 169</a>
+            </li>
+            <li>
+              <h3>Telefon po godzinach</h3>
+              <a href="tel:+48600000000">510 110 169</a>
             </li>
             <li>
               <h3>E-mail</h3>
@@ -825,7 +853,7 @@
       <div class="content">
         <div class="inner">
           <h2>Stadnina Koni</h2>
-          <p style="color:#6EE7B7;font-size:.82em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5em">
+          <p style="color:#4ADE80;font-size:.82em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5em">
             Pasja, hodowla i sport
           </p>
           <p>Konie to nie tylko część naszej praktyki weterynaryjnej, ale przede wszystkim nasza największa pasja. Lek. wet. Gabriela Rusak jest dumną właścicielką przydomowej stadniny, w której dbamy o najwyższe standardy hodowli, dobrostan i rozwój naszych podopiecznych.</p>
