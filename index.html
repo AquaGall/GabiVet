@@ -78,17 +78,17 @@
       color: #ffffff !important;
     }
 
-    /* Ikony w sekcji .features (Usługi) */
-    .wrapper.style3 .features section .icon {
-      color: #1ea34c !important;
+    /* Ikony w sekcji .features (Usługi) - przywrócenie okrągłych, dużych teł z kolorem marki */
+    .wrapper.style3 .features section .icon.major {
+      background-color: #ffffff !important; 
+      color: #1ea34c !important; 
     }
-    .wrapper.style3 .features section .icon::before {
-      background: rgba(30,163,76,.1) !important;
-      border-color: rgba(30,163,76,.3) !important;
-    }
-    .wrapper.style3 .features section .icon::after {
-      border-color: rgba(30,163,76,.3) !important;
-    }
+
+    /* Hyperspace domyślnie cieniuje siatkę do 6 elementów (od 0.035 do 0.210).
+       Uzupełniamy dla 7, 8 i 9 POWTARZAJĄC jasne odcienie z początku, żeby uniknąć ciemnych plam: */
+    .wrapper.style3 .features section:nth-child(7) { background-color: rgba(0,0,0, 0.035) !important; }
+    .wrapper.style3 .features section:nth-child(8) { background-color: rgba(0,0,0, 0.070) !important; }
+    .wrapper.style3 .features section:nth-child(9) { background-color: rgba(0,0,0, 0.105) !important; }
 
     /* Input focus */
     input[type="text"]:focus,
@@ -407,7 +407,7 @@
 <section id="sidebar">
   <div class="inner">
     <a href="#intro" class="logo scrolly" style="display: block; text-align: center; margin-bottom: 2em;">
-  <img src="logo.jpg" alt="GabiVet Logo" style="max-width: 85%; height: auto; background: #fff; padding: 10px; border-radius: 6px;" />
+  <img src="logo.png" alt="GabiVet Logo" style="max-width: 85%; height: auto; background: #fff; padding: 10px; border-radius: 6px;" />
     </a>
     
     <nav>
@@ -431,7 +431,7 @@
 <section id="intro" class="wrapper style1 fullscreen fade-up">
     <div class="inner">
 
-      <img src="logo.jpg" alt="GabiVet Logo" class="mobile-logo" />
+      <img src="logo.png" alt="GabiVet Logo" class="mobile-logo" />
 
       <h1>Gabinet Weterynaryjny</h1>
       <p>Kompleksowa opieka weterynaryjna dla psów, kotów i innych małych zwierząt towarzyszących.<br>
@@ -473,7 +473,7 @@
       <div class="content">
         <div class="inner">
           <h2>Lek. wet. Gabriela Rusak</h2>
-          <p style="color:#6EE7B7;font-size:.82em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5em">Lekarz weterynarii · właścicielka gabinetu</p>
+          <p style="color:#9dd4b4;font-size:.82em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5em">Lekarz weterynarii · właścicielka gabinetu</p>
           <p>Absolwentka Wydziału Medycyny Weterynaryjnej we Wrocławiu. Prowadzi GabiVet samodzielnie — co oznacza, że każda wizyta, każdy zabieg i każda decyzja terapeutyczna przechodzi przez jedną parę rąk i jeden umysł doskonale znający historię Twojego zwierzęcia.</p>
           <p>W jednoosobowym gabinecie nie ma anonimowości — dr Rusak pamięta imiona swoich pacjentów, ich charakter i wcześniejsze dolegliwości. Regularnie uczestniczy w kursach i konferencjach specjalistycznych, by łączyć osobiste zaangażowanie z aktualną wiedzą medyczną.</p>
         </div>
