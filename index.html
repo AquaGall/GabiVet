@@ -471,9 +471,20 @@
         display: flex;
         flex-wrap: wrap;
         align-items: baseline;
-        padding: 1em 0;
-        border-bottom: 1px solid rgba(106,171,132,.15);
+        padding: 1.4em 0.8em; /* Zwiększone dopełnienie dla efektu przycisku */
+        border-bottom: 1px solid rgba(106,171,132,.25); /* Mocniejsza linia */
+        background-color: rgba(255,255,255,0.02); /* Bardzo subtelne tło dla 'przycisku' */
+        border-radius: 8px; /* Zaokrąglenie dla przycisku */
+        margin-bottom: 0.8em; /* Odstęp między przyciskami */
       }
+      
+      /* Wyjątek dla nagłówków kategorii - ich nie robimy jako przyciski */
+      .price-table .cat-row {
+        background-color: transparent;
+        border-bottom: none;
+        padding: 1.2em 0.8em 0.2em 0.8em;
+      }
+
       .price-table td {
         display: block;
         padding: 0 !important;
@@ -482,32 +493,33 @@
       
       /* 1. Nazwa usługi (lewa góra) */
       .price-table tr:not(.cat-row) td:nth-child(1) {
-        width: 60%; /* Oddajemy trochę miejsca cenie */
+        width: 60%;
         order: 1;
         font-weight: 700;
         color: #fff;
-        padding-right: 10px !important;
+        font-size: 1.15em; /* ZWIĘKSZONA CZCIONKA */
+        padding-right: 15px !important;
       }
       
       /* 2. Cena (prawa góra) */
       .price-table tr:not(.cat-row) td:nth-child(3) {
-        width: 40%; /* Więcej miejsca dla długich tekstów */
+        width: 40%;
         order: 2;
         text-align: right;
         color: #9dd4b4;
-        font-size: 1.05em; /* Minimalnie mniejsza czcionka, by lepiej pasowała */
         font-weight: 700;
-        white-space: normal !important; /* Zezwalamy na zawijanie tekstu! */
-        line-height: 1.3; /* Zwiększamy odstęp między linijkami dla czytelności */
+        white-space: normal !important;
+        line-height: 1.2;
+        font-size: 1.2em; /* ZWIĘKSZONA CZCIONKA */
       }
       
       /* 3. Uwagi (lewy dół, pod nazwą) */
       .price-table tr:not(.cat-row) td:nth-child(2) {
         width: 100%;
         order: 3;
-        font-size: 0.85em;
-        color: rgba(255,255,255,.5);
-        margin-top: 0.4em;
+        color: rgba(255,255,255,.6);
+        margin-top: 0.6em; /* ZWIĘKSZONY ODSTĘP */
+        font-size: 1.0em; /* ZWIĘKSZONA CZCIONKA, wypełnia przestrzeń */
       }
       
       /* Nagłówki kategorii (np. Profilaktyka) */
@@ -515,7 +527,9 @@
         width: 100%;
         text-align: center;
         border-radius: 4px;
-        margin: 1.2em 0 0.2em 0;
+        font-size: 1.1em;
+        font-weight: 700;
+        color: #9dd4b4;
         padding: 0.6em !important;
       }
     }
