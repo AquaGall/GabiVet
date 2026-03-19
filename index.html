@@ -458,6 +458,7 @@
         border: none !important;
         background: transparent;
         overflow-x: visible;
+        margin: 0;
       }
       .price-table thead {
         display: none;
@@ -469,8 +470,8 @@
       .price-table tr {
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
-        padding: 0.8em 0;
+        align-items: baseline; /* Wyrównanie tekstu do jednej linii bazy */
+        padding: 1em 0;
         border-bottom: 1px solid rgba(106,171,132,.15);
       }
       .price-table td {
@@ -478,29 +479,41 @@
         padding: 0 !important;
         border: none;
       }
+      
+      /* 1. Nazwa usługi (lewa góra) */
       .price-table tr:not(.cat-row) td:nth-child(1) {
         width: 70%;
+        order: 1; /* Wymuszamy pierwsze miejsce wizualnie */
         font-weight: 700;
         color: #fff;
+        padding-right: 15px !important;
       }
+      
+      /* 2. Cena (prawa góra) */
       .price-table tr:not(.cat-row) td:nth-child(3) {
         width: 30%;
+        order: 2; /* Wymuszamy drugie miejsce wizualnie (obok nazwy) */
         text-align: right;
         color: #9dd4b4;
         font-size: 1.1em;
         font-weight: 700;
       }
+      
+      /* 3. Uwagi (lewy dół, pod nazwą) */
       .price-table tr:not(.cat-row) td:nth-child(2) {
         width: 100%;
+        order: 3; /* Wymuszamy trzecie miejsce (spada do nowej linii) */
         font-size: 0.85em;
         color: rgba(255,255,255,.5);
-        margin-top: 0.3em;
+        margin-top: 0.4em;
       }
+      
+      /* Nagłówki kategorii (np. Profilaktyka) */
       .price-table .cat-row td {
         width: 100%;
         text-align: center;
         border-radius: 4px;
-        margin: 0.8em 0 0.2em 0;
+        margin: 1.2em 0 0.2em 0;
         padding: 0.6em !important;
       }
     }
