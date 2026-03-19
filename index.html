@@ -90,23 +90,26 @@
       color: #ffffff !important;
     }
 
-    /* ── GLOBALNE POWIĘKSZENIE TEKSTU W PRZYCISKACH ───────────────────── */
+    /* ── POWIĘKSZENIE SAMEGO TEKSTU W PRZYCISKACH (BEZ ZMIANY ICH ROZMIARU) ── */
     input[type="submit"],
     input[type="reset"],
     input[type="button"],
     button,
     .button {
-      font-size: 1em !important;         /* Wyraźnie większa czcionka (domyślnie było 0.8em) */
-      font-weight: 700 !important;       /* Pogrubienie dla lepszej czytelności */
-      letter-spacing: 0.15em !important; /* Zmniejszone światło między literami, by tekst ładnie wypełniał przycisk */
+      font-size: 1em !important;         /* Zwiększamy tekst (domyślnie było 0.8em)... */
+      height: 2.8em !important;          /* ...ale sztucznie trzymamy starą wysokość przycisku */
+      line-height: 2.8em !important;     /* ...i poprawiamy centrowanie tekstu w pionie */
+      padding: 0 1.6em !important;       /* ...oraz korygujemy odstępy po bokach */
+      font-weight: 700 !important;
+      letter-spacing: 0.1em !important;
     }
 
-    /* Dopasowanie wielkości ikon w przyciskach (np. słuchawka) */
+    /* Ikony w przyciskach (np. słuchawka) */
     .button i {
       font-size: 1.1em !important; 
       margin-right: 0.4em !important;
     }
-    
+
     /* Ikony w sekcji .features (Usługi) - przywrócenie okrągłych, dużych teł z kolorem marki */
     .wrapper.style3 .features section .icon.major {
       background-color: #ffffff !important; 
