@@ -437,7 +437,6 @@
     }
     @media screen and (max-width: 736px) {
       .quick-info      { gap: 1em; }
-      .price-table     { font-size: .78em; }
       .gallery-mini    { grid-template-columns: repeat(2,1fr); }
       
       #footer .inner {
@@ -453,6 +452,57 @@
         padding: 0;
       }
       #footer .menu li:first-child { margin-top: 0; }
+
+      /* Przebudowa cennika dla wersji mobilnej */
+      .price-table-wrap {
+        border: none !important;
+        background: transparent;
+        overflow-x: visible;
+      }
+      .price-table thead {
+        display: none;
+      }
+      .price-table, .price-table tbody {
+        display: block;
+        width: 100%;
+      }
+      .price-table tr {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0.8em 0;
+        border-bottom: 1px solid rgba(106,171,132,.15);
+      }
+      .price-table td {
+        display: block;
+        padding: 0 !important;
+        border: none;
+      }
+      .price-table tr:not(.cat-row) td:nth-child(1) {
+        width: 70%;
+        font-weight: 700;
+        color: #fff;
+      }
+      .price-table tr:not(.cat-row) td:nth-child(3) {
+        width: 30%;
+        text-align: right;
+        color: #9dd4b4;
+        font-size: 1.1em;
+        font-weight: 700;
+      }
+      .price-table tr:not(.cat-row) td:nth-child(2) {
+        width: 100%;
+        font-size: 0.85em;
+        color: rgba(255,255,255,.5);
+        margin-top: 0.3em;
+      }
+      .price-table .cat-row td {
+        width: 100%;
+        text-align: center;
+        border-radius: 4px;
+        margin: 0.8em 0 0.2em 0;
+        padding: 0.6em !important;
+      }
     }
 
     /* ── LOGO MOBILNE ──────────────────────────────────── */
@@ -468,6 +518,21 @@
       }
     }
 
+        .mobile-scroll-hint { 
+      display: none; 
+    }
+
+    @media screen and (max-width: 736px) {
+      .mobile-scroll-hint {
+        display: block;
+        text-align: right;
+        font-size: 0.8em;
+        color: #9dd4b4;
+        margin-bottom: -1em; /* Przylega ładnie do tabeli */
+        padding-right: 0.5em;
+        opacity: 0.8;
+      }
+    }
   </style>
 </head>
 <body class="is-preload">
