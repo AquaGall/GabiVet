@@ -470,7 +470,7 @@
       .price-table tr {
         display: flex;
         flex-wrap: wrap;
-        align-items: baseline; /* Wyrównanie tekstu do jednej linii bazy */
+        align-items: baseline;
         padding: 1em 0;
         border-bottom: 1px solid rgba(106,171,132,.15);
       }
@@ -482,27 +482,29 @@
       
       /* 1. Nazwa usługi (lewa góra) */
       .price-table tr:not(.cat-row) td:nth-child(1) {
-        width: 70%;
-        order: 1; /* Wymuszamy pierwsze miejsce wizualnie */
+        width: 60%; /* Oddajemy trochę miejsca cenie */
+        order: 1;
         font-weight: 700;
         color: #fff;
-        padding-right: 15px !important;
+        padding-right: 10px !important;
       }
       
       /* 2. Cena (prawa góra) */
       .price-table tr:not(.cat-row) td:nth-child(3) {
-        width: 30%;
-        order: 2; /* Wymuszamy drugie miejsce wizualnie (obok nazwy) */
+        width: 40%; /* Więcej miejsca dla długich tekstów */
+        order: 2;
         text-align: right;
         color: #9dd4b4;
-        font-size: 1.1em;
+        font-size: 1.05em; /* Minimalnie mniejsza czcionka, by lepiej pasowała */
         font-weight: 700;
+        white-space: normal !important; /* Zezwalamy na zawijanie tekstu! */
+        line-height: 1.3; /* Zwiększamy odstęp między linijkami dla czytelności */
       }
       
       /* 3. Uwagi (lewy dół, pod nazwą) */
       .price-table tr:not(.cat-row) td:nth-child(2) {
         width: 100%;
-        order: 3; /* Wymuszamy trzecie miejsce (spada do nowej linii) */
+        order: 3;
         font-size: 0.85em;
         color: rgba(255,255,255,.5);
         margin-top: 0.4em;
