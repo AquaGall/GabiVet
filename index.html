@@ -584,31 +584,37 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════
-       WYMUSZENIE UKŁADU DESKTOP NA LAPTOPACH I TABLETACH (737px - 1280px)
+       WYMUSZENIE UKŁADU DESKTOP NA LAPTOPACH (737px - 1280px) - POPRAWKA
        ═══════════════════════════════════════════════════════════════ */
     @media screen and (min-width: 737px) and (max-width: 1280px) {
       
-      /* 1. Zwracamy panel trwale na lewą stronę */
+      /* Ukrywamy czarny pasek nawigacji z góry generowany przez skrypty JS */
+      #titleBar {
+        display: none !important;
+      }
+
+      /* 1. Panel boczny - naprawa ucinania na niskich ekranach laptopów */
       #sidebar {
         display: flex !important;
         flex-direction: column !important;
-        justify-content: center !important;
-        width: 16em !important; /* Lekko węższy niż na wielkich monitorach (18em) */
+        width: 16em !important; 
         height: 100vh !important;
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
         background: #203328 !important;
         padding: 0 !important;
+        overflow-y: auto !important; /* Włącza suwak, jeśli ekran jest za niski! */
       }
       
       #sidebar .inner {
-        display: flex !important;
-        flex-direction: column !important;
+        margin: auto 0 !important; /* Magiczny trik: centruje w pionie, ale NIE obcina góry */
+        padding: 2em 0 !important;
         width: 100% !important;
+        display: block !important;
       }
       
-      /* 2. Logo wraca do panelu w pełnej krasie */
+      /* 2. Logo wraca na swoje miejsce */
       #sidebar .logo {
         display: block !important;
         width: 100% !important;
@@ -627,8 +633,7 @@
         width: 100% !important;
       }
       #sidebar nav ul {
-        display: flex !important;
-        flex-direction: column !important;
+        display: block !important; /* Usunięcie flexa stąd zapobiega ściskaniu linków */
         margin: 0 !important;
         padding: 0 !important;
       }
@@ -644,13 +649,13 @@
         border: none !important;
       }
 
-      /* 4. Przesuwamy główną treść strony w prawo, obok panelu */
+      /* 4. Przesuwamy główną treść strony w prawo, by nie weszła pod panel */
       #wrapper {
         margin-left: 16em !important;
         padding-top: 0 !important;
       }
 
-      /* 5. Ukrywamy zastępcze logo w treści, bo mamy oryginał z lewej */
+      /* 5. Ukrywamy zastępcze mobilne logo w treści */
       .mobile-logo {
         display: none !important;
       }
