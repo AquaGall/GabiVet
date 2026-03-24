@@ -26,21 +26,18 @@
 
     /* ── HYPERSPACE NATIVE OVERRIDES ───────────────────── */
 
-    /* Ogólne tła sekcji – jaśniejsze i cieplejsze zielenie */
     body                          { background-color: #273b30 !important; }
     #wrapper > .wrapper.style1    { background-color: #273b30 !important; }
     #wrapper > .wrapper.style2    { background-color: #2e4538 !important; }
     #wrapper > .wrapper.style3    { background-color: #203328 !important; }
     #wrapper > .wrapper.style1.fullscreen { background-color: #273b30 !important; }
 
-    /* Sidebar */
     #sidebar { 
         background: #203328 !important; 
-        -ms-overflow-style: none;  /* Ukrywa pasek w IE i Edge */
-        scrollbar-width: none;     /* Ukrywa pasek w Firefox */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
-    /* Ukrywa pasek przewijania w Chrome, Safari i Opera */
     #sidebar::-webkit-scrollbar {
         display: none;
     }
@@ -52,11 +49,9 @@
     #sidebar nav ul li a:hover,
     #sidebar nav ul li a.active   { color: #86efac !important; }
 
-    /* Linki */
     a                             { color: #86efac !important; }
     a:hover                       { color: #bbf7d0 !important; }
 
-    /* Przyciski – primary (kolor logo) */
     input[type="submit"].primary,
     input[type="reset"].primary,
     input[type="button"].primary,
@@ -72,7 +67,6 @@
       border-color: #15803d !important;
     }
 
-    /* Przyciski – ghost/outline */
     .button:not(.primary) {
       border-color: rgba(30,163,76,.5) !important;
       color: #86efac !important;
@@ -83,34 +77,29 @@
       color: #ffffff !important;
     }
 
-    /* ── POWIĘKSZENIE SAMEGO TEKSTU W PRZYCISKACH (BEZ ZMIANY ICH ROZMIARU) ── */
     input[type="submit"],
     input[type="reset"],
     input[type="button"],
     button,
     .button {
-      font-size: 1em !important;         /* Zwiększamy tekst (domyślnie było 0.8em)... */
-      height: 2.8em !important;          /* ...ale sztucznie trzymamy starą wysokość przycisku */
-      line-height: 2.8em !important;     /* ...i poprawiamy centrowanie tekstu w pionie */
-      padding: 0 1.6em !important;       /* ...oraz korygujemy odstępy po bokach */
+      font-size: 1em !important;
+      height: 2.8em !important;
+      line-height: 2.8em !important;
+      padding: 0 1.6em !important;
       font-weight: 700 !important;
       letter-spacing: 0.1em !important;
     }
 
-    /* Ikony w przyciskach (np. słuchawka) */
     .button i {
       font-size: 1.1em !important; 
       margin-right: 0.4em !important;
     }
 
-    /* Ikony w sekcji .features (Usługi) - przywrócenie okrągłych, dużych teł z kolorem marki */
     .wrapper.style3 .features section .icon.major {
       background-color: #ffffff !important; 
       color: #1ea34c !important; 
     }
 
-    /* Hyperspace domyślnie cieniuje siatkę do 6 elementów (od 0.035 do 0.210).
-       Uzupełniamy dla 7, 8 i 9 POWTARZAJĄC jasne odcienie z początku, żeby uniknąć ciemnych plam: */
     .wrapper.style3 .features section:nth-child(7) { background-color: rgba(0,0,0, 0.035) !important; }
     .wrapper.style3 .features section:nth-child(8) { background-color: rgba(0,0,0, 0.070) !important; }
     .wrapper.style3 .features section:nth-child(9) { background-color: rgba(0,0,0, 0.105) !important; }
@@ -118,7 +107,6 @@
     .wrapper.style3 .features section:nth-child(11) { background-color: rgba(0,0,0, 0.105) !important; }
     .wrapper.style3 .features section:nth-child(12) { background-color: rgba(0,0,0, 0.105) !important; }
 
-    /* Input focus */
     input[type="text"]:focus,
     input[type="email"]:focus,
     input[type="tel"]:focus,
@@ -126,10 +114,8 @@
       border-color: #1ea34c !important;
     }
 
-    /* Scrolly / anchor active */
     .scrolly                      { border-bottom-color: #1ea34c !important; }
 
-    /* Uaktualnienie rgba dla pozostałych elementów (np. ramki, tabele) */
     .quick-info, .price-table-wrap, .map-embed, .parking-box, .patient-card, .review-card {
       border-color: rgba(30,163,76,.25) !important;
     }
@@ -147,7 +133,6 @@
       color: #86efac;
     }
 
-    /* ── QUICK INFO ────────────────────────────────────── */
     .quick-info {
       display: flex;
       gap: 2em;
@@ -163,7 +148,6 @@
     .quick-info-item i        { color: #9dd4b4; }
     .quick-info-item strong   { color: rgba(255,255,255,.85); }
 
-    /* ── REVIEWS ───────────────────────────────────────── */
     .reviews-grid {
       display: grid;
       grid-template-columns: repeat(3,1fr);
@@ -189,7 +173,6 @@
     .review-name { font-size: .82em; font-weight: 700; color: #fff; }
     .review-pet  { font-size: .72em; color: rgba(255,255,255,.45); }
 
-    /* ── PRICING TABLE ─────────────────────────────────── */
     .price-table-wrap {
       overflow-x: auto;
       border-radius: 8px;
@@ -245,7 +228,6 @@
     }
     .price-legal strong { color: #d4a832; }
 
-    /* ── PATIENT CARDS ─────────────────────────────────── */
     .patient-cards {
       display: grid;
       grid-template-columns: repeat(3,1fr);
@@ -287,7 +269,6 @@
       flex-shrink: 0; margin-top: .05em;
     }
 
-    /* ── HOURS TABLE ───────────────────────────────────── */
     .hours-wrap { margin-bottom: 1.5em; }
     .hours-table { width: 100%; border-collapse: collapse; font-size: .88em; }
     .hours-table tr { border-bottom: 1px solid rgba(255,255,255,.08); }
@@ -298,7 +279,6 @@
     .hours-table .today-row .h-time { color: #9dd4b4; }
     .hours-table .closed-row .h-time { color: rgba(255,255,255,.3); font-weight: 400; }
 
-    /* ── MAP EMBED ─────────────────────────────────────── */
     .map-embed {
       border-radius: 8px;
       overflow: hidden;
@@ -325,7 +305,6 @@
     }
     .map-embed-footer a.btn-map:hover { background: #4d8a65 !important; }
 
-    /* ── PARKING BOX ───────────────────────────────────── */
     .parking-box {
       background: rgba(106,171,132,.08);
       border: 1px solid rgba(106,171,132,.22);
@@ -338,7 +317,6 @@
     .parking-box p { margin: 0; color: rgba(255,255,255,.6); line-height: 1.6; }
     .parking-box strong { color: #9dd4b4; display: block; margin-bottom: .2em; }
 
-    /* ── GALLERY ───────────────────────────────────────── */
     .gallery-mini {
       display: grid;
       grid-template-columns: repeat(4,1fr);
@@ -361,15 +339,12 @@
     }
     .gallery-mini a:hover img { transform: scale(1.05); filter: brightness(1) saturate(1.1); }
 
-    /* ── SPOTLIGHTS TWEAK ──────────────────────────────── */
     #about.wrapper.style2.spotlights section .image {
       background-position: center top !important;
     }
 
-    /* Spec label colour inside spotlight */
     #about p[style*="color:#6EE7B7"] { color: #9dd4b4 !important; }
 
-    /* ── FORM SELECT ───────────────────────────────────── */
     .field select {
       width: 100%;
       background: rgba(106,171,132,.05);
@@ -398,9 +373,8 @@
       text-align: center;
     }
 
-    /* ── STOPKA (FOOTER) ───────────────────────────────── */
     #footer {
-      background-color: #1a2b22 !important; /* Najciemniejsza leśna zieleń, by odciąć stopkę od reszty strony */
+      background-color: #1a2b22 !important;
       border-top: 1px solid rgba(30,163,76,.2);
       padding: 3em 0 !important;
     }
@@ -409,7 +383,7 @@
       align-items: center;
       justify-content: flex-start;
       gap: 2em;
-      flex-wrap: wrap; /* na telefony */
+      flex-wrap: wrap;
     }
     #footer .footer-logo-svg {
       width: 220px;
@@ -424,7 +398,7 @@
     }
     #footer .menu li {
       display: inline-block;
-      border-left: solid 1px rgba(134, 239, 172, 0.2); /* delikatny seledynowy border */
+      border-left: solid 1px rgba(134, 239, 172, 0.2);
       line-height: 1;
       margin-left: 1em;
       padding-left: 1em;
@@ -444,7 +418,6 @@
       color: #bbf7d0 !important;
     }
 
-    /* ── RESPONSIVE ────────────────────────────────────── */
     @media screen and (max-width: 980px) {
       .reviews-grid    { grid-template-columns: 1fr; }
       .patient-cards   { grid-template-columns: 1fr; }
@@ -469,7 +442,6 @@
       }
       #footer .menu li:first-child { margin-top: 0; }
 
-      /* Przebudowa cennika dla wersji mobilnej */
       .price-table-wrap {
         border: none !important;
         background: transparent;
@@ -487,14 +459,13 @@
         display: flex;
         flex-wrap: wrap;
         align-items: baseline;
-        padding: 1.4em 0.8em; /* Zwiększone dopełnienie dla efektu przycisku */
-        border-bottom: 1px solid rgba(106,171,132,.25); /* Mocniejsza linia */
-        background-color: rgba(255,255,255,0.02); /* Bardzo subtelne tło dla 'przycisku' */
-        border-radius: 8px; /* Zaokrąglenie dla przycisku */
-        margin-bottom: 0.8em; /* Odstęp między przyciskami */
+        padding: 1.4em 0.8em;
+        border-bottom: 1px solid rgba(106,171,132,.25);
+        background-color: rgba(255,255,255,0.02);
+        border-radius: 8px;
+        margin-bottom: 0.8em;
       }
       
-      /* Wyjątek dla nagłówków kategorii - ich nie robimy jako przyciski */
       .price-table .cat-row {
         background-color: transparent;
         border-bottom: none;
@@ -507,17 +478,15 @@
         border: none;
       }
       
-      /* 1. Nazwa usługi (lewa góra) */
       .price-table tr:not(.cat-row) td:nth-child(1) {
         width: 60%;
         order: 1;
         font-weight: 700;
         color: #fff;
-        font-size: 1.15em; /* ZWIĘKSZONA CZCIONKA */
+        font-size: 1.15em;
         padding-right: 15px !important;
       }
       
-      /* 2. Cena (prawa góra) */
       .price-table tr:not(.cat-row) td:nth-child(3) {
         width: 40%;
         order: 2;
@@ -526,19 +495,17 @@
         font-weight: 700;
         white-space: normal !important;
         line-height: 1.2;
-        font-size: 1.2em; /* ZWIĘKSZONA CZCIONKA */
+        font-size: 1.2em;
       }
       
-      /* 3. Uwagi (lewy dół, pod nazwą) */
       .price-table tr:not(.cat-row) td:nth-child(2) {
         width: 100%;
         order: 3;
         color: rgba(255,255,255,.6);
-        margin-top: 0.6em; /* ZWIĘKSZONY ODSTĘP */
-        font-size: 1.0em; /* ZWIĘKSZONA CZCIONKA, wypełnia przestrzeń */
+        margin-top: 0.6em;
+        font-size: 1.0em;
       }
       
-      /* Nagłówki kategorii (np. Profilaktyka) */
       .price-table .cat-row td {
         width: 100%;
         text-align: center;
@@ -550,20 +517,19 @@
       }
     }
 
-    /* ── LOGO MOBILNE ──────────────────────────────────── */
     .mobile-logo {
-      display: none; /* Domyślnie ukryte na komputerze */
+      display: none;
     }
     
     @media screen and (max-width: 980px) {
       .mobile-logo {
-        display: block; /* Pokazuj na ekranach mniejszych niż 980px */
-        max-width: 120px; /* Rozmiar idealny na telefon */
+        display: block;
+        max-width: 120px;
         margin-bottom: 1.5em;
       }
     }
 
-        .mobile-scroll-hint { 
+    .mobile-scroll-hint { 
       display: none; 
     }
 
@@ -573,23 +539,17 @@
         text-align: right;
         font-size: 0.8em;
         color: #9dd4b4;
-        margin-bottom: -1em; /* Przylega ładnie do tabeli */
+        margin-bottom: -1em;
         padding-right: 0.5em;
         opacity: 0.8;
       }
     }
 
-    /* ═══════════════════════════════════════════════════════════════
-       WYMUSZENIE UKŁADU DESKTOP NA LAPTOPACH (737px - 1280px) - POPRAWKA
-       ═══════════════════════════════════════════════════════════════ */
     @media screen and (min-width: 737px) and (max-width: 1280px) {
-      
-      /* Ukrywamy czarny pasek nawigacji z góry generowany przez skrypty JS */
       #titleBar {
         display: none !important;
       }
 
-      /* 1. Panel boczny - naprawa ucinania na niskich ekranach laptopów */
       #sidebar {
         display: flex !important;
         flex-direction: column !important;
@@ -600,17 +560,16 @@
         left: 0 !important;
         background: #203328 !important;
         padding: 0 !important;
-        overflow-y: auto !important; /* Włącza suwak, jeśli ekran jest za niski! */
+        overflow-y: auto !important;
       }
       
       #sidebar .inner {
-        margin: auto 0 !important; /* Magiczny trik: centruje w pionie, ale NIE obcina góry */
+        margin: auto 0 !important;
         padding: 2em 0 !important;
         width: 100% !important;
         display: block !important;
       }
       
-      /* 2. Logo wraca na swoje miejsce */
       #sidebar .logo {
         display: block !important;
         width: 100% !important;
@@ -624,12 +583,11 @@
         height: auto !important;
       }
       
-      /* 3. Pionowa lista linków */
       #sidebar nav {
         width: 100% !important;
       }
       #sidebar nav ul {
-        display: block !important; /* Usunięcie flexa stąd zapobiega ściskaniu linków */
+        display: block !important;
         margin: 0 !important;
         padding: 0 !important;
       }
@@ -645,13 +603,11 @@
         border: none !important;
       }
 
-      /* 4. Przesuwamy główną treść strony w prawo, by nie weszła pod panel */
       #wrapper {
         margin-left: 16em !important;
         padding-top: 0 !important;
       }
 
-      /* 5. Ukrywamy zastępcze mobilne logo w treści */
       .mobile-logo {
         display: none !important;
       }
@@ -682,7 +638,7 @@
 
 <div id="wrapper">
 
-<section id="intro" class="wrapper style1 fullscreen fade-up">
+  <section id="intro" class="wrapper style1 fullscreen fade-up">
     <div class="inner">
 
       <img src="logo.png" alt="GabiVet Logo" class="mobile-logo" />
@@ -702,9 +658,8 @@
           </li>
       </ul>
 
-      
       <div class="quick-info">
-</div>
+      </div>
 
     </div>
   </section>
@@ -1088,19 +1043,7 @@
     </div>
   </section>
 
-</div><footer id="footer" class="wrapper alt">
-  <div class="inner">
-    <div class="footer-logo">
-      <img src="logo.png" alt="GabiVet Logo" style="width: 70px; height: auto; display: block; filter: brightness(1.1);" />
-    </div>
-    <ul class="menu">
-      <li>© 2026 GabiVet Gabinet Weterynaryjny. Wszelkie prawa zastrzeżone.</li>
-      <li>Szablon: <a href="https://html5up.net" target="_blank" rel="noopener">Hyperspace by HTML5 UP</a> (CCA 3.0)</li>
-    </ul>
-  </div>
-</footer>
-
-<section id="stadnina-promo" class="wrapper style2 fade-up">
+  <section id="stadnina-promo" class="wrapper style3 fade-up" style="background-color: #2e4538 !important;">
     <div class="inner" style="text-align: center;">
       <h2>Stajnia Tarus</h2>
       <p style="color:#9dd4b4;font-size:.82em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5em">
@@ -1116,6 +1059,18 @@
       </ul>
     </div>
   </section>
+
+</div><footer id="footer" class="wrapper alt">
+  <div class="inner">
+    <div class="footer-logo">
+      <img src="logo.png" alt="GabiVet Logo" style="width: 70px; height: auto; display: block; filter: brightness(1.1);" />
+    </div>
+    <ul class="menu">
+      <li>© 2026 GabiVet Gabinet Weterynaryjny. Wszelkie prawa zastrzeżone.</li>
+      <li>Szablon: <a href="https://html5up.net" target="_blank" rel="noopener">Hyperspace by HTML5 UP</a> (CCA 3.0)</li>
+    </ul>
+  </div>
+</footer>
 
 <script src="https://html5up.net/uploads/demos/hyperspace/assets/js/jquery.min.js"></script>
 <script src="https://html5up.net/uploads/demos/hyperspace/assets/js/jquery.scrollex.min.js"></script>
