@@ -1,13 +1,20 @@
 <!DOCTYPE HTML>
+<!--
+  Hyperspace by HTML5 UP – html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Treść dostosowana do gabinetu weterynaryjnego GabiVet
+-->
 <html lang="pl">
 <head>
   <title>GabiVet – Gabinet Weterynaryjny Sośnicowice</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
+  <!-- Original Hyperspace stylesheet from HTML5UP demo server -->
   <link rel="stylesheet" href="https://html5up.net/uploads/demos/hyperspace/assets/css/main.css" />
   <noscript><link rel="stylesheet" href="https://html5up.net/uploads/demos/hyperspace/assets/css/noscript.css" /></noscript>
 
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
@@ -660,6 +667,7 @@
 </head>
 <body class="is-preload">
 
+<!-- ═══════════════ SIDEBAR ═══════════════ -->
 <section id="sidebar">
   <div class="inner">
     <a href="#intro" class="logo scrolly" style="display: block; text-align: center; margin-bottom: 2em;">
@@ -674,14 +682,16 @@
         <li><a href="#pricing">Cennik</a></li>
         <li><a href="#patient">Strefa pacjenta</a></li>
         <li><a href="#contact">Kontakt</a></li>
-        <li><a href="stadnina.html">Stadnina koni</a></li>
+        <li><a href="#stadnina">Stadnina koni</a></li>
       </ul>
     </nav>
   </div>
 </section>
 
+<!-- ═════════════ WRAPPER ═════════════ -->
 <div id="wrapper">
 
+<!-- ══════ 1. STRONA GŁÓWNA ═════ -->
 <section id="intro" class="wrapper style1 fullscreen fade-up">
     <div class="inner">
 
@@ -704,13 +714,27 @@
 
       
       <div class="quick-info">
-</div>
+<!--         <div class="quick-info-item">
+          <i class="fas fa-phone"></i>
+          <span><strong>510 110 169</strong></span>
+        </div>
+        <div class="quick-info-item">
+          <i class="fas fa-clock"></i>
+          <span>Pn–Pt <strong>8:00–20:00</strong> &bull; Sob <strong>9:00–14:00</strong></span>
+        </div>
+        <div class="quick-info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>ul. Kościuszki 22/2, <strong>Sośnicowice</strong></span>
+        </div> -->
+      </div>
 
     </div>
   </section>
 
+  <!-- ════=═ 2. O NAS / ZESPÓŁ ══════ -->
   <section id="about" class="wrapper style2 spotlights">
 
+    <!-- Dr Gabriela Rusak -->
     <section>
       <a href="#" class="image">
         <img src="gabi.jpg"
@@ -729,6 +753,7 @@
 
   </section>
 
+  <!-- ══════ 3. USŁUGI ══════ -->
   <section id="services" class="wrapper style3 fade-up">
     <div class="inner">
       <h2>Zakres usług weterynaryjnych</h2>
@@ -814,6 +839,7 @@
     </div>
   </section>
 
+  <!-- ══════ 4. CENNIK ══════ -->
   <section id="pricing" class="wrapper style1 fade-up">
     <div class="inner">
       <h2>Orientacyjny cennik</h2>
@@ -873,9 +899,12 @@
     </div>
   </section>
 
+  <!-- ══════ 5. STREFA PACJENTA ══════ -->
   <section id="patient" class="wrapper style2 fade-up">
     <div class="inner">
       <h2>Strefa pacjenta — poradnik</h2>
+      <!-- <p>Kilka praktycznych wskazówek.</p> -->
+
       <div class="patient-cards">
 
         <div class="patient-card">
@@ -927,6 +956,7 @@
     </div>
   </section>
 
+  <!-- ══════ OPINIE KLIENTÓW ══════ -->
   <section id="reviews" class="wrapper style3 fade-up">
     <div class="inner">
       <h2>Opinie klientów</h2>
@@ -969,11 +999,13 @@
     </div>
   </section>
 
+  <!-- ══════ 6. KONTAKT ══════ -->
   <section id="contact" class="wrapper style1 fade-up">
     <div class="inner">
       <h2>Kontakt i dojazd</h2>
       <div class="split style1">
 
+        <!-- Formularz -->
         <section>
           <h3 style="font-size:1.05em;margin-bottom:1em;color:#fff">Formularz zgłoszeniowy</h3>
           <form method="post" action="#" onsubmit="return handleForm(event)">
@@ -1023,6 +1055,7 @@
           </form>
         </section>
 
+        <!-- Dane kontaktowe -->
         <section>
           <ul class="contact">
             <li>
@@ -1068,6 +1101,7 @@
             </li>
           </ul>
 
+          <!-- Google Maps -->
           <div class="map-embed">
             <iframe
               src="https://maps.google.com/maps?q=Ko%C5%9Bciuszki%2022,%2044-153%20So%C5%9Bnicowice&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -1088,13 +1122,45 @@
     </div>
   </section>
 
-</div><footer id="footer" class="wrapper alt">
+  <section id="stadnina" class="wrapper style2 spotlights fade-up">
+    <section>
+      <a href="#" class="image">
+        <img src="stadnina.jpg" 
+             alt="Stadnina koni GabiVet" data-position="center center" />
+      </a>
+      <div class="content">
+        <div class="inner">
+          <h2>Stadnina Koni</h2>
+          <p style="color:#6EE7B7;font-size:.82em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5em">
+            Pasja, hodowla i sport
+          </p>
+          <p>Konie to nie tylko część naszej praktyki weterynaryjnej, ale przede wszystkim nasza największa pasja. Wraz z mężem prowadzimy stadninę koni, w której dbamy o najwyższe standardy hodowli, dobrostan i rozwój naszych podopiecznych.</p>
+          <p>Nasze wieloletnie doświadczenie jeździeckie i hodowlane pozwala nam nie tylko lepiej rozumieć potrzeby pacjentów w terenie, ale też dzielić się tą pasją z innymi miłośnikami koni.</p>
+          <ul class="actions">
+            <li>
+                <a href="tel:+48502313149" class="button primary">
+                    <i class="fas fa-phone"></i> 502 313 149
+                </a>
+            </li>
+            <li>
+                <a href="#contact" class="button scrolly">Kontakt</a>
+            </li>
+        </ul>
+        </div>
+      </div>
+    </section>
+  </section>
+
+</div><!-- /#wrapper -->
+
+<!-- Footer -->
+<footer id="footer" class="wrapper alt">
   <div class="inner">
     <div class="footer-logo">
       <img src="logo.png" alt="GabiVet Logo" style="width: 70px; height: auto; display: block; filter: brightness(1.1);" />
     </div>
     <ul class="menu">
-      <li>© 2026 GabiVet Gabinet Weterynaryjny. Wszelkie prawa zastrzeżone.</li>
+      <li>&copy; 2026 GabiVet Gabinet Weterynaryjny. Wszelkie prawa zastrzeżone.</li>
       <li>Szablon: <a href="https://html5up.net" target="_blank" rel="noopener">Hyperspace by HTML5 UP</a> (CCA 3.0)</li>
     </ul>
   </div>
