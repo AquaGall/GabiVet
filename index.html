@@ -613,7 +613,10 @@
       }
     }
 
-    /* --- WYSUWANE MENU MOBILNE --- */
+    /* ======================================================= */
+    /* TUTAJ ZACZYNA SIĘ NASZ POPRAWIONY KOD MOBILNEGO MENU    */
+    /* ======================================================= */
+    
     #mobile-menu-btn {
       display: none;
       position: fixed;
@@ -648,19 +651,15 @@
     }
 
     @media screen and (max-width: 736px) {
-      #mobile-menu-btn {
-        display: block;
-      }
+      #mobile-menu-btn { display: block; }
       
-      /* Ukrywamy domyślne resztki paska z szablonu, by nie śmieciły */
       #titleBar, #navPanel { display: none !important; }
 
-      /* Konfiguracja naszego lewego paska bocznego */
       #sidebar {
         display: block !important;
         position: fixed !important;
         top: 0 !important;
-        left: -280px !important; /* Schowane poza ekranem */
+        left: -280px !important;
         width: 260px !important;
         height: 100vh !important;
         background: #203328 !important;
@@ -668,25 +667,52 @@
         z-index: 9999 !important;
         overflow-y: auto !important;
         box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+        display: block !important; /* Wyłączenie flexboxa */
       }
 
-      #sidebar.menu-open {
-        left: 0 !important; /* Menu wysunięte */
-      }
+      #sidebar.menu-open { left: 0 !important; }
       
-      #mobile-menu-overlay.menu-open {
-        display: block;
-        opacity: 1;
-      }
+      #mobile-menu-overlay.menu-open { display: block; opacity: 1; }
 
-      /* Poprawki estetyczne menu na telefonie */
       #sidebar .inner {
         padding: 4.5em 1.5em 2em 1.5em !important;
         display: block !important;
+        min-height: 0 !important;
+        height: auto !important;
       }
-      #sidebar nav ul { display: block !important; margin: 0; padding: 0; }
-      #sidebar nav ul li { display: block; border-top: 1px solid rgba(30,163,76,.1); margin: 0; }
-      #sidebar nav ul li a { display: block; padding: 1.2em 0.5em !important; border: none !important; text-align: left; font-size: 1.1em; color: #86efac !important; }
+
+      #sidebar nav {
+        display: block !important;
+        height: auto !important;
+      }
+
+      #sidebar nav ul { 
+        display: block !important; 
+        margin: 0 !important; 
+        padding: 0 !important; 
+        height: auto !important; 
+      }
+
+      #sidebar nav ul li { 
+        display: block !important; 
+        border-top: 1px solid rgba(30,163,76,.1); 
+        margin: 0 !important; 
+        padding: 0 !important;
+        height: auto !important; 
+        min-height: 0 !important; 
+      }
+
+      #sidebar nav ul li a { 
+        display: block !important; 
+        padding: 1em 0.5em !important; 
+        border: none !important; 
+        text-align: left; 
+        font-size: 1.1em; 
+        color: #86efac !important; 
+        height: auto !important; 
+        line-height: 1.4 !important; 
+      }
+      
       #sidebar nav ul li a:active { background: rgba(30,163,76,.1); }
     }
   </style>
